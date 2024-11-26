@@ -11,6 +11,7 @@ require "open-uri"
 
 Spot.destroy_all
 User.destroy_all
+Category.destroy_all
 
 # TODO: category_ids
 
