@@ -1,0 +1,16 @@
+.btn {
+  /*shape and space*/
+  border-radius: 40px;
+  background-color: $deep-purple;
+  color: $grey-100;
+  padding: 10px 16px;
+
+  /*text-style*/
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: regular;
+
+  /*other styles*/
+
+  display: inline-block;
+}
