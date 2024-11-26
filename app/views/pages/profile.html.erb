@@ -1,0 +1,22 @@
+<div>
+  <div>
+    <%= cl_image_tag @user.photo.key%>
+    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+    <p><%= @user.email %></p>
+  </div>
+
+  <div>
+    <div>
+      <h3>First Name</h3>
+      <p><%= @user.first_name %></p>
+    </div>
+    <div>
+      <h3>Last Name</h3>
+      <p><%= @user.last_name %></p>
+    </div>
+    <div>
+      <h3>Email</h3>
+      <p><%= @user.email %></p>
+    </div>
+  </div>
+</div>
