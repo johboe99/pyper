@@ -9,6 +9,7 @@
 #   end
 require "open-uri"
 
+Review.destroy_all
 Spot.destroy_all
 User.destroy_all
 Category.destroy_all
@@ -24,27 +25,27 @@ puts "category 2 created"
 category_3 = Category.create(name: "Cafe", icon: "")
 puts "category 3 created"
 
-spot_1 = Spot.create(name: "Brauhaus Neulich", description: "Cozy brewery with a large selection of beers and homemade German-style dumplings.", address: "Selchower Str. 20, 12049 Berlin", category_id: "1", opening_hours: "15:00 - 01:00")
+spot_1 = Spot.create(name: "Brauhaus Neulich", description: "Cozy brewery with a large selection of beers and homemade German-style dumplings.", address: "Selchower Str. 20, 12049 Berlin", category_id: category_1, opening_hours: "15:00 - 01:00")
 file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1732550254/neulich_emv2am.jpg")
 spot_1.photo.attach(io: file, filename: "brauhausneulich", content_type: "image/jpg")
 puts "spot 1 created"
 
-spot_2 = Spot.create(name: "Heckmeck Kneipe", description: "Draught beer in a cozy pub with billiards, a terrace and a map of Berlin on the ceiling.", address: "Eisenacher Str. 111, 10777 Berlin", category_id: "1", opening_hours: "12:00 - 01:00")
+spot_2 = Spot.create(name: "Heckmeck Kneipe", description: "Draught beer in a cozy pub with billiards, a terrace and a map of Berlin on the ceiling.", address: "Eisenacher Str. 111, 10777 Berlin", category_id: category_1, opening_hours: "12:00 - 01:00")
 file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1732550253/heckmeck_pfjk5z.jpg")
 spot_2.photo.attach(io: file, filename: "heckmeck", content_type: "image/jpg")
 puts "spot 2 created"
 
-spot_3 = Spot.create(name: "Lemon Grass Scent", description: "Spring rolls, pho, wok dishes and curries in a chic restaurant with pictures of Asian street scenes.", address: "Schwedter Str. 12, 10119 Berlin", category_id: "2", opening_hours: "12:00 - 22:00")
+spot_3 = Spot.create(name: "Lemon Grass Scent", description: "Spring rolls, pho, wok dishes and curries in a chic restaurant with pictures of Asian street scenes.", address: "Schwedter Str. 12, 10119 Berlin", category_id: category_2, opening_hours: "12:00 - 22:00")
 file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1732550253/lemongrassscent_sksq77.jpg")
 spot_3.photo.attach(io: file, filename: "lemongrassscent", content_type: "image/jpg")
 puts "spot 3 created"
 
-spot_4 = Spot.create(name: "Ristorante & Vinobar CaliBocca", description: "Italian pizzas, pasta dishes and aperitifs in a convivial bar with restaurant and dining terrace.", address: "Schlüterstraße 30, 10629 Berlin", category_id: "2", opening_hours: "17:00 - 24:00")
+spot_4 = Spot.create(name: "Ristorante & Vinobar CaliBocca", description: "Italian pizzas, pasta dishes and aperitifs in a convivial bar with restaurant and dining terrace.", address: "Schlüterstraße 30, 10629 Berlin", category_id: category_2, opening_hours: "17:00 - 24:00")
 file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1732550253/calibocca_whhkeo.jpg")
 spot_4.photo.attach(io: file, filename: "calibocca", content_type: "image/jpg")
 puts "spot 4 created"
 
-spot_5 = Spot.create(name: "Al Contadino Mozzarella Bar & Bottega", description: "Rustic Italian dishes and cheese platters as well as wine and cocktails in a friendly restaurant with exposed brickwork.", address: "Auguststraße 34, 10119 Berlin", category_id: "2", opening_hours: "12:00 - 22:30")
+spot_5 = Spot.create(name: "Al Contadino Mozzarella Bar & Bottega", description: "Rustic Italian dishes and cheese platters as well as wine and cocktails in a friendly restaurant with exposed brickwork.", address: "Auguststraße 34, 10119 Berlin", category_id: category_2, opening_hours: "12:00 - 22:30")
 file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1732550254/mozzarellabar_b41ep2.jpg")
 spot_5.photo.attach(io: file, filename: "mozarellabar", content_type: "image/jpg")
 puts "spot 5 created"
