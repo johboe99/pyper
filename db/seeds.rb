@@ -11,8 +11,9 @@ require "open-uri"
 
 Review.destroy_all
 Spot.destroy_all
-User.destroy_all
 Category.destroy_all
+Follower.destroy_all
+User.destroy_all
 
 # TODO: category_ids
 
@@ -70,3 +71,42 @@ user_4 = User.create(first_name: "Johannes", last_name: "Böhmer", email: "johan
 file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1732276135/development/6gsvo6qj77v7fdztd7n0s74tnunl.jpg")
 user_4.photo.attach(io: file, filename: "katharina.jpg", content_type: "image/jpg")
 puts "user 4 created"
+
+follow_1 = Follower.create(asker_id: user_2.id, receiver_id: user_1.id)
+puts "follow 1 created"
+
+follow_2 = Follower.create(asker_id: user_3.id, receiver_id: user_1.id)
+puts "follow 2 created"
+
+follow_3 = Follower.create(asker_id: user_4.id, receiver_id: user_1.id)
+puts "follow 3 created"
+
+follow_4 = Follower.create(asker_id: user_1.id, receiver_id: user_2.id)
+puts "follow 4 created"
+
+follow_5 = Follower.create(asker_id: user_2.id, receiver_id: user_3.id)
+puts "follow 5 created"
+
+follow_6 = Follower.create(asker_id: user_3.id, receiver_id: user_4.id)
+puts "follow 6 created"
+
+review_1 = Review.create(content: "Cozy, tasty, perfect!", rating: 5, spot_id: spot_1.id, user_id: user_1.id)
+puts "review 1 created"
+
+review_1 = Review.create(content: "Fresh, authentic, delightful.", rating: 4, spot_id: spot_2.id, user_id: user_1.id)
+puts "review 2 created"
+
+review_1 = Review.create(content: "Crispy crust, heavenly!", rating: 3, spot_id: spot_3.id, user_id: user_1.id)
+puts "review 3 created"
+
+review_1 = Review.create(content: "Juicy steaks, top-notch!", rating: 2, spot_id: spot_5.id, user_id: user_1.id)
+puts "review 4 created"
+
+review_1 = Review.create(content: "Flavor-packed, satisfying!", rating: 5, spot_id: spot_4.id, user_id: user_2.id)
+puts "review 5 created"
+
+review_1 = Review.create(content: "Freshness galore, yum!", rating: 4, spot_id: spot_1.id, user_id: user_3.id)
+puts "review 6 created"
+
+review_1 = Review.create(content: "Sweet, indulgent, divine.", rating: 3, spot_id: spot_3.id, user_id: user_4.id)
+puts "review 7 created"
