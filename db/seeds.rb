@@ -11,8 +11,18 @@ require "open-uri"
 
 Spot.destroy_all
 User.destroy_all
+Category.destroy_all
 
 # TODO: category_ids
+
+category_1 = Category.create(name: "Bar", icon: "")
+puts "category 1 created"
+
+category_2 = Category.create(name: "Restaurant", icon: "")
+puts "category 2 created"
+
+category_3 = Category.create(name: "Cafe", icon: "")
+puts "category 3 created"
 
 spot_1 = Spot.create(name: "Brauhaus Neulich", description: "Cozy brewery with a large selection of beers and homemade German-style dumplings.", address: "Selchower Str. 20, 12049 Berlin", category_id: "1", opening_hours: "15:00 - 01:00")
 file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1732550254/neulich_emv2am.jpg")
@@ -40,31 +50,22 @@ spot_5.photo.attach(io: file, filename: "mozarellabar", content_type: "image/jpg
 puts "spot 5 created"
 
 
-user_1 = User.create(username: "kathadoehle", first_name: "Katharina", last_name: "Döhle", email: "katha@doehle.com", password: "123456", description: "")
+user_1 = User.create(first_name: "Katharina", last_name: "Döhle", email: "katharina@doehle.com", password: "123456", description: "")
 file = URI.open("https://res.cloudinary.com/dsrno7wgu/image/upload/v1732195306/Katha_pic_zfev1d.jpg")
 user_1.photo.attach(io: file, filename: "katharina.jpg", content_type: "image/jpg")
 puts "user 1 created"
 
-user_2 = User.create(username: "ajmalkhan", first_name: "Ajmal", last_name: "Khan", email: "ajmal@khan.com", password: "123456", description: "")
+user_2 = User.create(first_name: "Ajmal", last_name: "Khan", email: "ajmal@khan.com", password: "123456", description: "")
 file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1732549416/T02NE0241-U07PK0EKHS7-99da87e8d3ea-512_bvkgtb.jpg")
 user_2.photo.attach(io: file, filename: "ajmal.jpg", content_type: "image/jpg")
 puts "user 2 created"
 
-user_3 = User.create(username: "anikve", first_name: "Anik", last_name: "van Eester", email: "anik@vaneester.com", password: "123456", description: "")
+user_3 = User.create(first_name: "Anik", last_name: "van Eester", email: "anik@vaneester.com", password: "123456", description: "")
 file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1732276137/development/l8mf6z533hf6you9i5gsa45qjjep.jpg")
 user_3.photo.attach(io: file, filename: "katharina.jpg", content_type: "image/jpg")
 puts "user 3 created"
 
-user_4 = User.create(username: "johboe", first_name: "Johannes", last_name: "Böhmer", email: "johannes@boehmer.com", password: "123456", description: "")
+user_4 = User.create(first_name: "Johannes", last_name: "Böhmer", email: "johannes@boehmer.com", password: "123456", description: "")
 file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1732276135/development/6gsvo6qj77v7fdztd7n0s74tnunl.jpg")
 user_4.photo.attach(io: file, filename: "katharina.jpg", content_type: "image/jpg")
 puts "user 4 created"
-
-category_1 = Category.create(name: "Bar", icon: "")
-puts "category 1 created"
-
-category_2 = Category.create(name: "Restaurant", icon: "")
-puts "category 2 created"
-
-category_3 = Category.create(name: "Cafe", icon: "")
-puts "category 3 created"
