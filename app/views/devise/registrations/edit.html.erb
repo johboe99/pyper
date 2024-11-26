@@ -25,24 +25,14 @@
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "new-first-name" } %>
-    <%= f.input :first_name_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-first-name" } %>
-    <%= f.input :current_first_name,
-                hint: "we need your current first name to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-first-name" } %>
     <%= f.input :last_name,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "new-last-name" } %>
-    <%= f.input :last_name_confirmation,
+    <%= f.input :description,
+                hint: "leave it blank if you don't want to change it",
                 required: false,
-                input_html: { autocomplete: "new-last-name" } %>
-    <%= f.input :current_last_name,
-                hint: "we need your current last name to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-last-name" } %>
+                input_html: { autocomplete: "new-description" } %>
   </div>
 
   <div class="form-actions">
