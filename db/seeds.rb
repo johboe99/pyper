@@ -12,6 +12,8 @@ require "open-uri"
 Spot.destroy_all
 User.destroy_all
 
+# TODO: category_ids
+
 spot_1 = Spot.create(name: "Brauhaus Neulich", description: "Cozy brewery with a large selection of beers and homemade German-style dumplings.", address: "Selchower Str. 20, 12049 Berlin", category_id: "", opening_hours: "15:00 - 01:00")
 file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1732550254/neulich_emv2am.jpg")
 user_1.photo.attach(io: file, filename: "brauhausneulich", content_type: "image/jpg")
