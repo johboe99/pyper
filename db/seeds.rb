@@ -93,20 +93,20 @@ puts "follow 6 created"
 review_1 = Review.create(content: "Cozy, tasty, perfect!", rating: 5, spot_id: spot_1.id, user_id: user_1.id)
 puts "review 1 created"
 
-review_1 = Review.create(content: "Fresh, authentic, delightful.", rating: 4, spot_id: spot_2.id, user_id: user_1.id)
+review_2 = Review.create(content: "Fresh, authentic, delightful.", rating: 4, spot_id: spot_2.id, user_id: user_1.id)
 puts "review 2 created"
 
-review_1 = Review.create(content: "Crispy crust, heavenly!", rating: 3, spot_id: spot_3.id, user_id: user_1.id)
+review_3 = Review.create(content: "Crispy crust, heavenly!", rating: 3, spot_id: spot_3.id, user_id: user_1.id)
 puts "review 3 created"
 
-review_1 = Review.create(content: "Juicy steaks, top-notch!", rating: 2, spot_id: spot_5.id, user_id: user_1.id)
+review_4 = Review.create(content: "Juicy steaks, top-notch!", rating: 2, spot_id: spot_5.id, user_id: user_1.id)
 puts "review 4 created"
 
-review_1 = Review.create(content: "Flavor-packed, satisfying!", rating: 5, spot_id: spot_4.id, user_id: user_2.id)
+review_5 = Review.create(content: "Flavor-packed, satisfying!", rating: 5, spot_id: spot_4.id, user_id: user_2.id)
 puts "review 5 created"
 
-review_1 = Review.create(content: "Freshness galore, yum!", rating: 4, spot_id: spot_1.id, user_id: user_3.id)
+review_6 = Review.create(content: "Freshness galore, yum!", rating: 4, spot_id: spot_1.id, user_id: user_3.id)
 puts "review 6 created"
 
-review_1 = Review.create(content: "Sweet, indulgent, divine.", rating: 3, spot_id: spot_3.id, user_id: user_4.id)
+review_7 = Review.create(content: "Sweet, indulgent, divine.", rating: 3, spot_id: spot_3.id, user_id: user_4.id)
 puts "review 7 created"
