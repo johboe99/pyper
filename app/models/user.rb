@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :spots, through: :reviews
   has_many :followers_as_asker, class_name: "Follower", foreign_key: :asker_id
   has_many :followers_as_receiver, class_name: "Follower", foreign_key: :receiver_id
+  has_one_attached :photos
 end
