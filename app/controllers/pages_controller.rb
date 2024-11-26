@@ -6,5 +6,8 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
+    @followers = @user.followers
+    @followings = @user.followings
+    @reviews = @user.reviews
   end
 end
