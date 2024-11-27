@@ -1,10 +1,18 @@
-<h1> Your Recommendations</h1>
-
-<% @spots.each do |spot| %>
-  <div>
-    <%= cl_image_tag spot.photo.key %>
-    <p><%= spot.name %></p>
-    <p><%= spot.category.name %></p>
-    <p><%= spot.reviews.count %></p>
-    <%= link_to 'See Details', spot, class: 'btn' %>
-<% end %>
+<div class="container-index mt-5 d-flex justify-content-center align-items-center">
+  <div class="row mb-4">
+    <div class="col">
+      <h2> Your Recommendations</h2>
+        <% @spots.each do |spot| %>
+          <div class="card-home">
+            <%= cl_image_tag spot.photo.key %>
+            <div class="card-home-infos">
+              <h2 class="card-home-title"><%= spot.name %></h2>
+              <p><%= spot.category.name %></p>
+              <p><%= spot.reviews.count %></p>
+            </div>
+            <%= link_to 'See Details', spot, class: 'btn-purple' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Pyper</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,9 +11,11 @@
   </head>
 
   <body>
-    <%= render "shared/flashes" %>
-    <%= render "shared/navbar" %>
+    <div class="container-home">
+      <%= render "shared/flashes" %>
+      <%= render "shared/navbar" %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
   </body>
 </html>

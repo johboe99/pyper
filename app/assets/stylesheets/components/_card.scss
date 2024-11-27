@@ -1,0 +1,44 @@
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card-home p {
+  margin-bottom: 0px;
+}
+
+
+.card-home {
+  overflow: hidden;
+  background: #2B2B36;
+  box-shadow: 0 0 15px rgba(3, 0, 5, 0.091);
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+
+.card-home img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-home .card-home-infos {
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+.card-home-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.card-home .btn-purple {
+  margin-left: 18px;
+}
