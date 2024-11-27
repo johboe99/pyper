@@ -23,13 +23,19 @@ class SpotsController < ApplicationController
     end
 
     @spot = @spots.find { |spot| spot.id == params[:id].to_i }
+    @reviews = []
     rating_sum = 0
 
+
     @spot.reviews.each do |review|
-      rating_sum += review.rating
+      if @followings.include?(review.user)
+        rating_sum += review.rating
+        @reviews << review
+      end
     end
 
-    @average_rating = rating_sum / @spot.reviews.count
+    average_rating = rating_sum / @reviews.count
+    @average_rating = average_rating.to_f
 
-  end  
+  end
 end
