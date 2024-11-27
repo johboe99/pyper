@@ -31,5 +31,5 @@ class SpotsController < ApplicationController
 
     @average_rating = rating_sum / @spot.reviews.count
 
-  end  
+  end
 end
