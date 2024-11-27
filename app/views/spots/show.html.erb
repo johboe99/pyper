@@ -1,7 +1,7 @@
 <div>
   <%= cl_image_tag @spot.photo.key %>
   <p><%= @spot.name %></p>
-  <p><%= @average_rating %>/5.0</p>
+  <p><%= star_rating(@average_rating, 5) %></p>
   <p>Description</p>
   <p><%= @spot.description %></p>
   <p>Opening hours</p>
