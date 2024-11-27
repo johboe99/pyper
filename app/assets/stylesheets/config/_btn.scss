@@ -1,8 +1,25 @@
 .btn {
   /*shape and space*/
   border-radius: 40px;
-  background-color: $deep-purple;
-  color: $grey-100;
+  background-color: #560EDD;
+  color: #EEEEF7;
+  padding: 10px 16px;
+
+  /*text-style*/
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: regular;
+
+  /*other styles*/
+
+  display: inline-block;
+}
+
+.btn-light {
+  /*shape and space*/
+  border-radius: 40px;
+  background-color: $purple-100;
+  color: $deep-purple;
   padding: 10px 16px;
 
   /*text-style*/
