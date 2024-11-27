@@ -9,6 +9,18 @@ class SpotsController < ApplicationController
         @spots << review.spot
       end
     end
+
+    @markers = []
+    @spots.each do |spot|
+      if spot.geocoded?
+        @markers <<
+        {
+          lat: spot.latitude,
+          lng: spot.longitude,
+          #info_window_html: render_to_string(partial: "info_window", locals: {spot: spot})
+        }
+      end
+    end
   end
 
   def show
