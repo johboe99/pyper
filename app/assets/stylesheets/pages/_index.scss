@@ -1,2 +1,22 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.container-home {
+  width: 100%;
+  position: relative;
+  background-color: #17171a;
+  // overflow: hidden;
+  text-align: left;
+  color: #f6f8fa;
+}
+
+.container-index {
+  align-items: center;
+}
+
+.star-rating {
+  color: #9663F6; /* Set the color of the stars */
+  font-size: 1.5rem; /* Adjust size as needed */
+  line-height: 1;
+  letter-spacing: 0.1rem; /* Optional: spacing between stars */
+}

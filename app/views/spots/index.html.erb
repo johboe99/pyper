@@ -1,16 +1,23 @@
-<h1> Your Recommendations</h1>
-
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="col sticky-top my-3 d-flex">
+<div class="container-index mt-5 d-flex justify-content-center align-items-center">
+  <div class="row mb-4">
+    <div class="col">
+      <h2> Your Recommendations</h2>
+      <div style="width: 100%; height: 600px;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="col sticky-top my-3 d-flex">
+      </div>
+        <% @spots.each do |spot| %>
+          <div class="card-home">
+            <%= cl_image_tag spot.photo.key %>
+            <div class="card-home-infos">
+              <h2 class="card-home-title"><%= spot.name %></h2>
+              <p><%= spot.category.name %></p>
+              <p><%= spot.reviews.count %></p>
+            </div>
+            <%= link_to 'See Details', spot, class: 'btn-purple' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<% @spots.each do |spot| %>
-  <div>
-    <%= cl_image_tag spot.photo.key %>
-    <p><%= spot.name %></p>
-    <p><%= spot.category.name %></p>
-    <p><%= spot.reviews.count %></p>
-    <%= link_to 'See Details', spot, class: 'btn' %>
-<% end %>
