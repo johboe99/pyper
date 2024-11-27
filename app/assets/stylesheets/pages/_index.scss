@@ -1,2 +1,9 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.star-rating {
+  color: #9663F6; /* Set the color of the stars */
+  font-size: 1.5rem; /* Adjust size as needed */
+  line-height: 1;
+  letter-spacing: 0.1rem; /* Optional: spacing between stars */
+}
