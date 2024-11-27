@@ -394,7 +394,7 @@ review_12 = Review.create(content: "Perfect date spot.", rating: 4, spot_id: spo
 
 review_13 = Review.create(content: "Drinks were pricey.", rating: 3, spot_id: spot_35.id, user_id: user_2.id)
 
-review_14 = Review.create(content: "Fresh and flavorful.", rating: 4, spot_id: spot_35.id, user_id: user_2.id)
+review_14 = Review.create(content: "Fresh and flavorful.", rating: 4, spot_id: spot_36.id, user_id: user_2.id)
 
 review_15 = Review.create(content: "Not worth the hype.", rating: 3, spot_id: spot_44.id, user_id: user_2.id)
 
@@ -402,7 +402,7 @@ review_16 = Review.create(content: "Great vegan options.", rating: 4, spot_id: s
 
 review_17 = Review.create(content: "Incredible burgers!", rating: 5, spot_id: spot_38.id, user_id: user_3.id)
 
-review_18 = Review.create(content: "Music was too loud.", rating: 3, spot_id: spot_39.id, user_id: user_3.id)
+review_18 = Review.create(content: "Music was too loud.", rating: 3, spot_id: spot_49.id, user_id: user_3.id)
 
 review_19 = Review.create(content: "Friendly staff!", rating: 4, spot_id: spot_23.id, user_id: user_3.id)
 
