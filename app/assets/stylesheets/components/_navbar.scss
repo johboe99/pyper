@@ -1,12 +1,11 @@
-.navbar-lewagon {
+.ulç {
   justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
+  background: #1B014C;
+  color: #F6F8FA;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
   flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
 }
