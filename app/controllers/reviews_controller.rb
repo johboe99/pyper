@@ -7,12 +7,13 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @spot = Spot.find(params[:spot_id])
-    @review.user = @user
     @user = current_user
+    @review.user = @user
+    @review.spot = @spot
       if @review.save
         redirect_to spot_path(@spot), notice: "Review created successfully!"
       else
-        render "spots/show", status: :unprocessable_entity
+        render :new, status: :unprocessable_entity
       end
   end
 
