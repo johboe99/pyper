@@ -9,8 +9,8 @@
 </div>
 
 <div>
-<p>My friend's reviews</p>
-<% @reviews.each do |review| %>
+<p>Reviews</p>
+<% @spot.reviews.each do |review| %>
   <div>
     <p><%= cl_image_tag review.user.photo.key, class: "avatar-large" %></p>
   </div>
