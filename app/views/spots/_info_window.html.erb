@@ -1,0 +1,9 @@
+<div>
+  <%= cl_image_tag spot.photo.key, style: "height:50px; width:auto" %>
+  <div class="card-home-infos">
+    <h2 class="card-home-title"><%= spot.name %></h2>
+    <p><%= spot.category.name %></p>
+    <p><%= spot.reviews.count %></p>
+  </div>
+  <%= link_to 'See Details', spot, class: 'btn-purple' %>
+</div>

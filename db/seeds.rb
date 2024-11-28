@@ -14,6 +14,7 @@ Spot.destroy_all
 Category.destroy_all
 Follower.destroy_all
 User.destroy_all
+Tag.destroy_all
 
 # TODO: category_ids
 
@@ -429,3 +430,65 @@ review_29 = Review.create(content: "Decent experience.", rating: 3, spot_id: spo
 
 review_30 = Review.create(content: "Would come again.", rating: 4, spot_id: spot_40.id, user_id: user_1.id)
 puts "these should be enough"
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_2 = Tag.create(name: "Casual Eats")
+
+tag_3 = Tag.create(name: "Family-Friendly")
+
+tag_4 = Tag.create(name: "Farm-to-table")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+tag_1 = Tag.create(name: "Fine Dining")
+
+
