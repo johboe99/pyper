@@ -1,0 +1,22 @@
+.mapboxgl-popup {
+  width: 250px;
+  overflow: hidden;
+  background: #2B2B36;
+  box-shadow: 0 0 15px rgba(3, 0, 5, 0.091);
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.mapboxgl-popup-content {
+  overflow: hidden;
+  background: #2B2B36;
+  width: 100%;
+}
+
+.mapboxgl-popup-content img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 20px;
+}
