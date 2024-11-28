@@ -9,5 +9,10 @@ class PagesController < ApplicationController
     @followers = @user.followers
     @followings = @user.followings
     @reviews = @user.reviews
+    @spots = []
+
+    @reviews.each do |review|
+      @spots << review.spot
+    end
   end
 end

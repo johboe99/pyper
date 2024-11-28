@@ -2,13 +2,12 @@
   <div class="row mb-4">
     <div class="col">
       <h2> Your Recommendations</h2>
-        <% @spots.each do |spot| %>
+        <% @spots.uniq.each do |spot| %>
           <div class="card-home">
             <%= cl_image_tag spot.photo.key %>
             <div class="card-home-infos">
               <h2 class="card-home-title"><%= spot.name %></h2>
               <p><%= spot.category.name %></p>
-              <p><%= spot.reviews.count %></p>
             </div>
             <%= link_to 'See Details', spot, class: 'btn-purple' %>
         </div>
