@@ -14,8 +14,9 @@
   width: 100%;
 }
 
-.mapboxgl-popup img {
-  height: 200px;
-  width: 100%;
+.mapboxgl-popup-content img {
+  height: 100px;
+  width: 100px;
   object-fit: cover;
+  border-radius: 20px;
 }
