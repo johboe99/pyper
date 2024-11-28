@@ -1,24 +1,41 @@
-<div>
-  <div>
-    <%= cl_image_tag @user.photo.key%>
-    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-    <p><%= @user.email %></p>
-  </div>
+  <div class="container-index mt-5 d-flex justify-content-center align-items-center">
+    <div class="row mb-4">
+      <div class="col">
+        <div>
+          <div class="text-center">
+            <%= cl_image_tag @user.photo.key, class: "avatar-large"%>
+            <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+            <p><%= @user.email %></p>
+          </div>
 
-  <div>
-  <p><%= @reviews.count %></p>
-  <p>Recommendations</p>
+          <div class="row text-center">
+            <div class="col-md-4">
+              <h3><%= @reviews.count %></h3>
+              <p>Recommendations</p>
+            </div>
+            <div class="col-md-4">
+              <h3><%= @followers.count %></h3>
+              <p>Followers</p>
+            </div>
+            <div class="col-md-4">
+              <h3><%= @followings.count %></h3>
+              <p>Following</p>
+            </div>
+          </div>
+
+        </div>
+
+        <h2> My Recommendations</h2>
+          <% @spots.each do |spot| %>
+            <div class="card-home">
+              <%= cl_image_tag spot.photo.key %>
+              <div class="card-home-infos">
+                <h2 class="card-home-title"><%= spot.name %></h2>
+                <p><%= spot.category.name %></p>
+              </div>
+            </div>
+          <% end %>
+    </div>
   </div>
-  <div>
-  <p><%= @followers.count %></p>
-  <p>Followers</p>
-  </div>
-  <div>
-  <p><%= @followings.count %></p>
-  <p>Following</p>
-  </div>
-  </div>
-  <button class= "btn">
-    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
-  </button>
 </div>
+  <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-purple" %>
