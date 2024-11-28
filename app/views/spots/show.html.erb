@@ -4,7 +4,7 @@
       <%= cl_image_tag @spot.photo.key, class: "img-show" %>
       <h2 class="show-title text-center"><%= @spot.name %></h2>
       <p class="text-center"><%= star_rating(@average_rating, 5) %></p>
-      <p><%=review.tags.map(&:name) %></p>
+
       <div class="description-section">
         <h3 class="show-h3">Description</h3>
         <p><%= @spot.description %></p>
