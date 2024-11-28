@@ -17,6 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 80px;
 }
 
 /* Title Styling */
@@ -65,7 +66,7 @@
 .card-show h3 {
   font-size: 18px;
   font-weight: 600;
-  color: #EEEEEE;
+  color: $light-grey-text;
   margin: 0 0 4px;
 }
 
@@ -110,4 +111,8 @@
   margin: 0 0 5px;
   font-size: 14px;
   color: $grey-200;
+}
+
+.description-section p {
+  color: $grey-100;
 }
