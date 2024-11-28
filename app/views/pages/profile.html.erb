@@ -4,7 +4,7 @@
           <div class="text-center profile mb-4">
             <h2 class="index-title">Profile</h2>
             <%= cl_image_tag @user.photo.key, class: "avatar-large mb-2"%>
-            <h2 class="card-home-title"><%= @user.first_name %> <%= @user.last_name %></h2>
+            <h2> <%= @user.first_name %> <%= @user.last_name %></h2>
             <p><%= @user.email %></p>
           </div>
 
