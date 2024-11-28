@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @spot = Spot.find(params[:spot_id])
+    @tags = Tag.all
   end
 
   def create
@@ -11,6 +12,7 @@ class ReviewsController < ApplicationController
     @review.user = @user
     @review.spot = @spot
       if @review.save
+        #create_review_tags(@review, params[:review][:tag_ids])
         redirect_to spot_path(@spot), notice: "Review created successfully!"
       else
         render :new, status: :unprocessable_entity
@@ -26,6 +28,12 @@ class ReviewsController < ApplicationController
  private
 
   def review_params
-    params.require(:review).permit(:content, :rating)
+    params.require(:review).permit(:content, :rating, tag_ids: [])
   end
+
+  #def create_review_tags(review, tag_ids)
+  # tag_ids.each do |tag_id|
+  #  ReviewsTag.create(review: review, tag_id: tag_id)
+  # end
+  #end
 end
