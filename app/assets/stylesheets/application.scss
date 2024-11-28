@@ -2,7 +2,6 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
-@import "components/card";
 
 
 // External libraries
@@ -17,7 +16,8 @@
 @import "config/colors";
 @import "config/fonts";
 @import "config/avatar";
+@import "components/card";
+@import "components/map";
 
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
 @import url("https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css");
-
