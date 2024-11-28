@@ -8,14 +8,15 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   </head>
 
   <body>
     <div class="container-home">
       <%= render "shared/flashes" %>
-      <%= render "shared/navbar" %>
 
       <%= yield %>
+      <%= render "shared/navbar" %>
     </div>
   </body>
 </html>

@@ -1,0 +1,113 @@
+@media (min-width: 768px) {
+  .img-show {
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .img-show {
+    width: 60%;
+  }
+}
+
+.container-index {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Title Styling */
+.show-title {
+  color: $light-grey-text;
+  font-size: 24px;
+  font-weight: semi-bold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Star Rating Alignment */
+.star-rating-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image Styling */
+.img-show {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Card for Reviews */
+.card-show {
+  display: flex;
+  align-items: center;
+  background: #2B2B36;
+  box-shadow: 0 0 15px rgba(3, 0, 5, 0.091);
+  border-radius: 15px;
+  margin: 10px 0;
+  padding: 10px 20px;
+}
+
+/* Card Info Styling */
+.card-show-infos {
+  flex-grow: 1;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-show h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #EEEEEE;
+  margin: 0 0 4px;
+}
+
+.card-show p {
+  font-size: 14px;
+  font-weight: 300;
+  color: $light-grey-text;
+  margin: 0;
+}
+
+.card-show-stars {
+  padding-top: 10px;
+}
+
+
+.show-h3 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 30px;
+  color: #D8D8D8;
+}
+
+.opening-hours {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 16px;
+  color: #D8D8D8;
+  width: 200px;
+  height: 75px;
+  border: 1px solid #560EDD;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px 2px rgba(34, 2, 66, 0.71);
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+
+}
+
+.opening-hours h5 {
+  margin: 0 0 5px;
+  font-size: 14px;
+  color: $grey-200;
+}

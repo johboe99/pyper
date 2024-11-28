@@ -1,41 +1,41 @@
   <div class="container-index mt-5 d-flex justify-content-center align-items-center">
     <div class="row mb-4">
-      <div class="col">
-        <div>
+      <div class="col" style="width: 360px">
           <div class="text-center">
-            <%= cl_image_tag @user.photo.key, class: "avatar-large"%>
-            <h3><%= @user.first_name %> <%= @user.last_name %></h3>
-            <p><%= @user.email %></p>
+            <h2 class="index-title">Profile</h2>
+          </div>
+          <div class="text-center profile mb-4">
+            <%= cl_image_tag @user.photo.key, class: "avatar-large mb-4 mt-4"%>
+            <h2> <%= @user.first_name %> <%= @user.last_name %></h2>
+            <p class="mb-4"><%= @user.email %></p>
           </div>
 
-          <div class="row text-center">
-            <div class="col-md-4">
-              <h3><%= @reviews.count %></h3>
+          <div class="row text-center profile my-4 d-flex align-items-center profile">
+            <div class="col d-flex flex-column align-items-center border-end">
+              <h2><%= @reviews.count %></h2>
               <p>Recommendations</p>
             </div>
-            <div class="col-md-4">
-              <h3><%= @followers.count %></h3>
+            <div class="col d-flex flex-column align-items-center border-end">
+              <h2><%= @followers.count %></h2>
               <p>Followers</p>
             </div>
-            <div class="col-md-4">
-              <h3><%= @followings.count %></h3>
+            <div class="col d-flex flex-column align-items-center">
+              <h2><%= @followings.count %></h2>
               <p>Following</p>
             </div>
           </div>
 
-        </div>
-
-        <h2> My Recommendations</h2>
+        <h2 class="index-title">My reccommendations</h2>
           <% @spots.each do |spot| %>
             <div class="card-home">
               <%= cl_image_tag spot.photo.key %>
-              <div class="card-home-infos">
+               <div class="card-home-infos">
                 <h2 class="card-home-title"><%= spot.name %></h2>
                 <p><%= spot.category.name %></p>
               </div>
             </div>
           <% end %>
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-purple" %>
     </div>
   </div>
 </div>
-  <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-purple" %>

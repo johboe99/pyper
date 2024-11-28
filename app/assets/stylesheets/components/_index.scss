@@ -3,9 +3,25 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+@import "star";
 
 .index-title {
   color: $grey-200;
   font-size: 14px;
   font-weight: light;
+}
+
+.profile p {
+  margin-bottom: 0px;
+  color: $grey-200;
+  font-size: 12px;
+  font-weight: light;
+}
+
+.profile h2 {
+  font-size: 18px;
+  font-weight: semi-bold;
+  margin-bottom: 4px;
+  margin-right: 4px;
+  color: #EEEEEE;
 }

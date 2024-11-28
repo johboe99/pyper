@@ -23,4 +23,23 @@
   }
 }
 
+.btn-purple-full-width {
+  width: 100%;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #560EDD;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 40px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  &:active {
+    background-color: #D3D4FB;
+    color: $deep-purple;
+    border-color: $purple-300;
+  }
 
+}
