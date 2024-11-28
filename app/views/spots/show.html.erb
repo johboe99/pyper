@@ -19,6 +19,7 @@
     <p><%=review.user.last_name %></p>
     <p><%=review.rating %>/5</p>
     <p><%=review.content %></p>
+    <p><%=review.tags.map(&:name) %></p>
   </div>
 <% end %>
 <%= link_to 'Add Review', new_spot_review_path(@spot), class: 'btn' %>
