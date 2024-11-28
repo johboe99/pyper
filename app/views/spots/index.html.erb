@@ -1,16 +1,16 @@
 <div class="container-index mt-5 d-flex justify-content-center align-items-center">
   <div class="row mb-4">
     <div class="col">
-      <h2> Your Recommendations</h2>
-        <% @spots.each do |spot| %>
-          <div class="card-home">
-            <%= cl_image_tag spot.photo.key %>
-            <div class="card-home-infos">
-              <h2 class="card-home-title"><%= spot.name %></h2>
-              <p><%= spot.category.name %></p>
-              <p><%= spot.reviews.count %></p>
-            </div>
-            <%= link_to 'See Details', spot, class: 'btn-purple' %>
+      <h2 class="index-title">Your Recommendations</h2>
+      <% @spots.each do |spot| %>
+        <div class="card-home">
+          <%= cl_image_tag spot.photo.key %>
+          <div class="card-home-infos">
+            <h2 class="card-home-title"><%= spot.name %></h2>
+            <p><%= spot.category.name %></p>
+            <p class="card-home-rating"><%= spot.reviews.count %></p>
+          </div>
+          <%= link_to 'See Details', spot, class: 'btn-purple' %>
         </div>
       <% end %>
       <div style="width: 100%; height: 600px;"
@@ -21,3 +21,4 @@
     </div>
   </div>
 </div>
+
