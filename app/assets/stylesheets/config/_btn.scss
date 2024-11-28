@@ -2,8 +2,8 @@
   /*shape and space*/
   border-radius: 40px;
   background-color: $deep-purple;
-  color: $grey-100;
-  padding: 10px 16px;
+  color: #D3D4FB;
+  padding: 10px 20px;
   margin-bottom: 8px;
 
 
@@ -15,4 +15,10 @@
   /*other styles*/
 
   display: inline-block;
+
+  &:active {
+    background-color: #D3D4FB;
+    color: $deep-purple;
+    border-color: $purple-300;
+  }
 }

@@ -1,22 +1,26 @@
 <div class="container-index mt-5 d-flex justify-content-center align-items-center">
   <div class="row mb-4">
-    <div class="col">
-      <h2> Your Recommendations</h2>
-        <% @spots.each do |spot| %>
-          <div class="card-home">
-            <%= cl_image_tag spot.photo.key %>
-            <div class="card-home-infos">
-              <h2 class="card-home-title"><%= spot.name %></h2>
-              <p><%= spot.category.name %></p>
-              <p><%= spot.reviews.count %></p>
-            </div>
-            <%= link_to 'See Details', spot, class: 'btn-purple' %>
+    <div class="col" data-controller="toggle-map">
+      <button class="btn-purple" data-action="click->toggle-map#toggleDisplay">PLACEHOLDER: toggle map</button>
+      <h2 class="index-title">Your Recommendations</h2>
+      <div data-toggle-map-target="list" class="d-none">
+        <% @spots.uniq.each do |spot| %>
+        <div class="card-home">
+          <%= cl_image_tag spot.photo.key %>
+          <div class="card-home-infos">
+            <h2 class="card-home-title"><%= spot.name %></h2>
+            <p><%= spot.category.name %></p>
+            <p class="card-home-rating"><%= spot.reviews.count %></p>
+          </div>
+          <%= link_to 'See Details', spot, class: 'btn-purple' %>
         </div>
-      <% end %>
-      <div style="width: 100%; height: 600px;"
+        <% end %>
+      </div>
+      <div style="width: 360px; height: 600px;"
+        data-toggle-map-target="map"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="col sticky-top my-3 d-flex">
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="col sticky-top my-3">
       </div>
     </div>
   </div>

@@ -17,7 +17,8 @@ class SpotsController < ApplicationController
         {
           lat: spot.latitude,
           lng: spot.longitude,
-          #info_window_html: render_to_string(partial: "info_window", locals: {spot: spot})
+          info_window_html: render_to_string(partial: "info_window", locals: {spot: spot}),
+          marker_html: render_to_string(partial: "marker")
         }
       end
     end
@@ -35,18 +36,15 @@ class SpotsController < ApplicationController
     end
 
     @spot = @spots.find { |spot| spot.id == params[:id].to_i }
-    @reviews = []
     rating_sum = 0
 
 
     @spot.reviews.each do |review|
-      if @followings.include?(review.user)
-        rating_sum += review.rating
-        @reviews << review
-      end
+      rating_sum += review.rating
     end
 
-    average_rating = rating_sum / @reviews.count
+
+    average_rating = rating_sum / @spot.reviews.count
     @average_rating = average_rating.to_f
 
   end
