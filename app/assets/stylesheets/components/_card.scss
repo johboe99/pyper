@@ -1,11 +1,14 @@
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
+@media (min-width: 768px) {
+  .card-home {
+    max-width: 700px;
   }
 }
 
 .card-home p {
   margin-bottom: 0px;
+  color: $grey-200;
+  font-size: 14px;
+  font-weight: light;
 }
 
 
@@ -13,9 +16,10 @@
   overflow: hidden;
   background: #2B2B36;
   box-shadow: 0 0 15px rgba(3, 0, 5, 0.091);
-  border-radius: 20px;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+
 }
 
 
@@ -23,6 +27,7 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .card-home .card-home-infos {
@@ -30,15 +35,30 @@
   padding-top: 20px;
   padding-bottom: 10px;
   padding-left: 20px;
+  flex-direction: column;
+  position: relative;
 }
+
 
 .card-home-title {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: semi-bold;
   margin: 0;
   margin-bottom: 4px;
+  color: #EEEEEE;
 }
 
 .card-home .btn-purple {
   margin-left: 18px;
+  margin-bottom: 15px;
+}
+
+
+.card-home .card-home-rating {
+  position: absolute;
+  right: 16px;
+  top: 20px;
+  font-size: 16px;
+  font-weight: semi-bold;
+  color: $grey-200;
 }
