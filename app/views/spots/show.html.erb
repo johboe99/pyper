@@ -1,26 +1,38 @@
-<div>
-  <%= cl_image_tag @spot.photo.key %>
-  <p><%= @spot.name %></p>
-  <p><%= star_rating(@average_rating, 5) %></p>
-  <p>Description</p>
-  <p><%= @spot.description %></p>
-  <p>Opening hours</p>
-  <p><%= @spot.opening_hours %></p>
-</div>
+<div class="container-index mt-5 d-flex justify-content-center align-items-center">
+  <div class="row mb-4">
+    <div class="col">
+      <%= cl_image_tag @spot.photo.key, class: "img-show" %>
+      <h2 class="show-title text-center"><%= @spot.name %></h2>
+      <p class="text-center"><%= star_rating(@average_rating, 5) %></p>
+      <p><%=review.tags.map(&:name) %></p>
+      <div class="description-section">
+        <h3 class="show-h3">Description</h3>
+        <p><%= @spot.description %></p>
+      </div>
 
-<div>
-<p>Reviews</p>
-<% @spot.reviews.each do |review| %>
-  <div>
-    <p><%= cl_image_tag review.user.photo.key, class: "avatar-large" %></p>
+      <div class="opening-hours-section">
+        <h3 class="show-h3">Opening Hours</h3>
+        <div class="opening-hours">
+          <h5>Mo – So</h5>
+          <p><%= @spot.opening_hours %></p>
+        </div>
+      </div>
+
+      <div class="reviews-section">
+        <h3 class="show-h3">Reviews</h3>
+        <% @spot.reviews.each do |review| %>
+          <div class="card-show">
+            <%= cl_image_tag review.user.photo.key, class: "avatar-large" %>
+            <div class="card-show-infos">
+              <h3><%= review.user.first_name %> <%= review.user.last_name %></h3>
+              <p><%= review.content %></p>
+              <p class="card-show-stars"><%= star_rating(review.rating, 5) %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <%= link_to 'Add Review', new_spot_review_path(@spot), class: 'btn-purple-full-width' %>
+    </div>
   </div>
-  <div>
-    <p><%=review.user.first_name %></p>
-    <p><%=review.user.last_name %></p>
-    <p><%=review.rating %>/5</p>
-    <p><%=review.content %></p>
-    <p><%=review.tags.map(&:name) %></p>
-  </div>
-<% end %>
-<%= link_to 'Add Review', new_spot_review_path(@spot), class: 'btn' %>
 </div>
