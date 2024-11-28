@@ -15,7 +15,7 @@
   /* Button group container (fixed position) */
   .btn-group-container {
     position: fixed;
-    bottom: 20px;  /* 20px from the bottom */
+    bottom: 135px;  /* 20px from the bottom */
     left: 50%;     /* Center horizontally */
     transform: translateX(-50%); /* Offset to center it */
     z-index: 1000; /* Ensure buttons are on top of the map */
