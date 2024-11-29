@@ -15,4 +15,8 @@ class PagesController < ApplicationController
       @spots << review.spot
     end
   end
+
+  def friends
+    @users = User.all
+  end
 end

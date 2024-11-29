@@ -1,0 +1,22 @@
+<div class="container-index d-flex justify-content-center align-items-center">
+    <div class="row mb-4">
+      <div class="col" style="width: 360px">
+        <h2 class="index-title mt-4 mx-3">People you might know</h2>
+      </div>
+
+      <div>
+      <% @users.each do |user| %>
+        <div class="profile d-flex align-items-center">
+          <div class="col-3 mx-3">
+            <%= cl_image_tag user.photo.key, class: "avatar-large mb-4 mt-3"%>
+          </div>
+          <div class="col">
+            <h2><%= user.first_name %> <%= user.last_name %></h2>
+            <p class="mb-4"><%= user.email %></p>
+          </div>
+            <p><i class="fa-solid fa-square-plus px-5" style= "color:#EEEEF7; font-size:30px"></i></p>
+        </div>
+      <% end %>
+      </div>
+    </div>
+</div>
