@@ -1,0 +1,21 @@
+.dropdown-toggle::after {
+  transform: rotate(0deg); /* Initially show downward arrow */
+}
+
+.dropdown-toggle.show::after { /* When dropdown is open */
+  transform: rotate(180deg); /* Change to upward arrow */
+}
+
+.dropdown-menu {
+  background-color: #17171A;
+  border: none;
+}
+
+.btn {
+  background-color: #17171A;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #17171A;
+}
