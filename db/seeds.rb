@@ -9,6 +9,7 @@
 #   end
 require "open-uri"
 
+ReviewsTag.destroy_all
 Review.destroy_all
 Spot.destroy_all
 Category.destroy_all
