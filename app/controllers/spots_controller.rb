@@ -42,7 +42,7 @@ class SpotsController < ApplicationController
 
 
     @spot.reviews.each do |review|
-      rating_sum += review.rating if review.rating
+      rating_sum += review.rating
     end
 
 

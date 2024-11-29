@@ -14,5 +14,10 @@ class PagesController < ApplicationController
     @reviews.each do |review|
       @spots << review.spot
     end
+
+    @user = current_user
+    @recommendations = @user.reviews.map { |review | review.spot }
+    @first_recommendation = @recommendations.shift
+
   end
 end
