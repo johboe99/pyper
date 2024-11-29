@@ -10,6 +10,7 @@
   .map {
     height: 100%; /* Ensure map fills the entire container */
     width: 100%;  /* Ensure map fills the entire container */
+    overflow: hidden;
   }
 
   /* Button group container (fixed position) */
