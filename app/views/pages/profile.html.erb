@@ -1,11 +1,8 @@
-  <div class="container-index mt-5 d-flex justify-content-center align-items-center">
+  <div class="container-index d-flex justify-content-center align-items-center">
     <div class="row mb-4">
       <div class="col" style="width: 360px">
-          <div class="text-center">
-            <h2 class="index-title">Profile</h2>
-          </div>
           <div class="text-center profile mb-4">
-            <%= cl_image_tag @user.photo.key, class: "avatar-large mb-4 mt-4"%>
+            <%= cl_image_tag @user.photo.key, class: "avatar-large mb-4"%>
             <h2> <%= @user.first_name %> <%= @user.last_name %></h2>
             <p class="mb-4"><%= @user.email %></p>
           </div>
