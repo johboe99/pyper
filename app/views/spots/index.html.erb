@@ -28,14 +28,14 @@
             data-map-markers-value="<%= @markers.to_json %>"
             data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="col my-3">
           </div>
-        </div>
-      </div>
           <div class="btn-group-container">
             <div class="btn-group custom-btn-group" role="group" aria-label="Basic example">
               <button class="btn btn-purple"><i class="fa-solid fa-filter"></i> Filter</button>
-              <button class="btn btn-purple" data-action="click->toggle-map#toggleDisplay"><i class="fa-solid fa-map"></i> Map</button>
+              <button class="btn btn-purple" data-action="click->toggle-map#toggleDisplay" data-toggle-map-target="button"><i class="fa-solid fa-list"></i> List</button>
             </div>
           </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
