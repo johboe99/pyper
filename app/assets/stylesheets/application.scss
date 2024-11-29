@@ -29,3 +29,8 @@
 html, body {
   background-color: #17171A;
 }
+
+body {
+  padding-bottom: 120px; /* Adjust this value based on your navbar's height */
+  padding-top: 10px;
+}
