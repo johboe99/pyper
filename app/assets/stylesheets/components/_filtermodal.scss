@@ -15,6 +15,10 @@
   animation-duration: 0.4s;
 }
 
+.modal-border-color {
+  border-color: black;
+}
+
 /* Modal Content */
 .modal-content {
   position: fixed;
@@ -47,9 +51,12 @@
   padding: 2px 16px;
   background-color: #17171A;
   color: white;
+  border-color: black;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {
+  padding: 2px 16px;
+}
 
 .modal-footer {
   padding: 2px 16px;
