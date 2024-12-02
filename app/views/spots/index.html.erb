@@ -8,12 +8,7 @@
           <div class="card-home-infos">
             <h2 class="card-home-title"><%= spot.name %></h2>
             <p><%= spot.category.name %></p>
-            <% rating_sum = 0 %>
-            <% spot.reviews.each do |review| %>
-              <% rating_sum += review.rating %>
-            <% end %>
-            <% average_rating = rating_sum / spot.reviews.count %>
-            <p class="card-home-rating"><%= star_rating(average_rating, 5) %></p>
+            <p class="card-home-rating"><%= star_rating(spot.average_rating, 5) %></p>
           </div>
           <%= link_to 'See Details', spot, class: 'btn-purple' %>
         </div>

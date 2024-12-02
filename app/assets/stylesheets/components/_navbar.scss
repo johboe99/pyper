@@ -2,6 +2,9 @@ nav.navbar {
   background-color: #17171A !important;
   height: 120px;
   border-top: 1.5px solid #272729;
+  overflow: hidden;
+  bottom: 0;
+  z-index: 1000; 
 }
 
 nav.navbar a {
@@ -22,8 +25,8 @@ nav.navbar a {
 }
 
 .icon-circle i {
-  color: #EEEEF7; /* Icon color */
-  font-size: 1.5rem; /* Icon size */
+  color: #D3D4FB; /* Icon color */
+  font-size: 1.4rem; /* Icon size */
 }
 
 .icon-circle:hover {
