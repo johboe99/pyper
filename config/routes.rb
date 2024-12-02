@@ -11,4 +11,10 @@ Rails.application.routes.draw do
   resources :spots, only: [:show, :index] do
     resources :reviews, only: [:new, :create]
   end
+
+  resources :users, only: [] do
+    resources :followers, only: [:create]
+  end
+
+  resources :followers, only: [:destroy]
 end
