@@ -11,4 +11,9 @@ class User < ApplicationRecord
   has_many :followings, through: :followers_as_receiver, source: :asker
   has_many :followers, through: :followers_as_asker, source: :receiver
   has_one_attached :photo
+
+  def following?(other_user)
+    # Check if there is a record in the followers table where the current user is following the other user
+    Follower.exists?(asker: self, receiver: other_user)
+  end
 end

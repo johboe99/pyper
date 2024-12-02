@@ -11,4 +11,9 @@ Rails.application.routes.draw do
   resources :spots, only: [:show, :index] do
     resources :reviews, only: [:new, :create]
   end
+
+  resources :users, only: [:index] do
+    # Nested routes for following/unfollowing
+    resources :followers, only: [:create, :destroy]
+  end
 end

@@ -5,18 +5,26 @@
       </div>
 
       <div>
-      <% @users.each do |user| %>
-        <div class="profile d-flex align-items-center">
-          <div class="col-3 mx-3">
-            <%= cl_image_tag user.photo.key, class: "avatar-large mb-4 mt-3"%>
+        <% @users.each do |user| %>
+          <div class="profile d-flex align-items-center">
+            <div class="col-3 mx-3">
+              <%= cl_image_tag user.photo.key, class: "avatar-large mb-4 mt-3" %>
+            </div>
+            <div class="col">
+              <h2><%= user.first_name %> <%= user.last_name %></h2>
+              <p class="mb-4"><%= user.email %></p>
+            </div>
+
+            <!-- Check if the current user is following the displayed user -->
+            <% if current_user.following?(user) %>
+              <!-- If following, show "Unfollow" button -->
+              <%= button_to 'Unfollow', user_follower_path(user), method: :delete, class: 'btn-purple' %>
+            <% else %>
+              <!-- If not following, show "Follow" button -->
+              <%= button_to 'Follow', user_followers_path(user), method: :post, class: 'btn-purple' %>
+            <% end %>
           </div>
-          <div class="col">
-            <h2><%= user.first_name %> <%= user.last_name %></h2>
-            <p class="mb-4"><%= user.email %></p>
-          </div>
-            <%= link_to 'Add', "", class: 'btn-purple'%>
-        </div>
-      <% end %>
+        <% end %>
       </div>
     </div>
 </div>
