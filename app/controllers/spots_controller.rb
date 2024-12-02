@@ -1,5 +1,6 @@
 class SpotsController < ApplicationController
   def index
+
     @user = current_user
     @followings = @user.followings
     @spots = []
@@ -9,6 +10,29 @@ class SpotsController < ApplicationController
         @spots << review.spot
       end
     end
+
+    @categories = Category.all
+
+    if params[:category_id].present? && params[:user_id].present?
+      @spots = Spot.joins(:reviews).where(
+        reviews: { user_id: params[:user_id] },
+        category_id: params[:category_id]
+      ).distinct
+    elsif params[:category_id].present?
+      @spots = Spot.joins(:reviews).where(
+        reviews: { user_id: @followings.pluck(:id) },
+        category_id: params[:category_id]
+      ).distinct
+    elsif params[:user_id].present?
+      @spots = Spot.joins(:reviews).where(
+        reviews: { user_id: params[:user_id] }
+      ).distinct
+    else
+      @spots = Spot.joins(:reviews).where(
+        reviews: { user_id: @followings.pluck(:id) }
+      ).distinct
+    end
+
 
     @markers = []
     @spots.each do |spot|
@@ -24,10 +48,10 @@ class SpotsController < ApplicationController
         }
       end
     end
-
   end
 
   def show
+    @spot = Spot.find(params[:id])
     @user = current_user
     @followings = @user.followings
     @spots = []
@@ -38,17 +62,7 @@ class SpotsController < ApplicationController
       end
     end
 
-    @spot = @spots.find { |spot| spot.id == params[:id].to_i }
-    rating_sum = 0
-
-
-    @spot.reviews.each do |review|
-      rating_sum += review.rating
-    end
-
-
-    average_rating = rating_sum / @spot.reviews.count
-    @average_rating = average_rating.to_f
+    @average_rating = @spot.average_rating
 
   end
 end

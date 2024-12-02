@@ -8,12 +8,7 @@
           <div class="card-home-infos">
             <h2 class="card-home-title"><%= spot.name %></h2>
             <p><%= spot.category.name %></p>
-            <% rating_sum = 0 %>
-            <% spot.reviews.each do |review| %>
-              <% rating_sum += review.rating %>
-            <% end %>
-            <% average_rating = rating_sum / spot.reviews.count %>
-            <p class="card-home-rating"><%= star_rating(average_rating, 5) %></p>
+            <p class="card-home-rating"><%= star_rating(spot.average_rating, 5) %></p>
           </div>
           <%= link_to 'See Details', spot, class: 'btn-purple' %>
         </div>
@@ -28,10 +23,40 @@
           </div>
         </div>
       </div>
-      <div class="btn-group-container">
-        <div class="btn-group custom-btn-group" role="group" aria-label="Basic example">
-          <button class="btn btn-purple"><i class="fa-solid fa-filter"></i> Filter</button>
-          <button class="btn btn-purple" data-action="click->toggle-map#toggleDisplay" data-toggle-map-target="button"><i class="fa-solid fa-list"></i> List</button>
+      <div data-controller="filter" data-filter-is-open-value="false">
+        <div class="btn-group-container">
+          <div class="btn-group custom-btn-group" role="group" aria-label="Basic example">
+            <button class="btn btn-purple" data-action="click->filter#open"><i class="fa-solid fa-filter"></i> Filter</button>
+            <button class="btn btn-purple" data-action="click->toggle-map#toggleDisplay" data-toggle-map-target="mapbutton"><i class="fa-solid fa-list"></i> List</button>
+          </div>
+        </div>
+        <div class="modal" data-filter-target="modal">
+          <%# modal for filters %>
+          <%# it should be in front of the buttons (and navbar?) %>
+          <%# it should cover around half of the map/screen, maybe more? %>
+          <%# hide buttons when filter modal is open? %>
+          <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between">
+              <h2>Modal Header</h2>
+              <span class="close" data-action="click->filter#close">&times;</span>
+            </div>
+            <div class="modal-body">
+
+
+            <%= form_with(url: spots_path, method: :get, local: true) do |form| %>
+            <%= form.label :category_id, "Categories" %>
+            <%= form.select :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, selected: params[:category_id]), include_blank: "All Categories" %>
+            <%= form.label :user_id, "Users" %>
+            <%= form.select :user_id, options_for_select(@followings.map { |user| ["#{user.first_name} #{user.last_name}", user.id] }, selected: params[:user_id]), include_blank: "All Users" %>
+            <%= form.submit "Filter" %>
+          <% end %>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button class="btn btn-purple">Apply</button>
+              <button class="btn btn-purple">Cancel</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

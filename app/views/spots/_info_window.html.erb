@@ -5,13 +5,8 @@
     </div>
   </div>
 
-   <div class="row mt-2">
-    <% rating_sum = 0 %>
-    <% spot.reviews.each do |review| %>
-      <% rating_sum += review.rating %>
-    <% end %>
-    <% average_rating = (rating_sum / spot.reviews.count).to_f %>
-    <p class="text-center map-box-rating"><%= star_rating(average_rating, 5) %></p>
+  <div class="row mt-2">
+    <p class="text-center map-box-rating"><%= star_rating(spot.average_rating, 5) %></p>
   </div>
 
   <div class="row align-items-center">
