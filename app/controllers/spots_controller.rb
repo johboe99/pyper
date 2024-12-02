@@ -11,6 +11,14 @@ class SpotsController < ApplicationController
       end
     end
 
+    if params[:category_id].present?
+      @spots = Spot.where(category_id: params[:category_id])
+    else
+      @spots = Spot.all
+    end
+      @categories = Category.all
+
+
     @markers = []
     @spots.each do |spot|
       if spot.geocoded?
