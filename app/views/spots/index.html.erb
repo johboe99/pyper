@@ -41,7 +41,14 @@
               <span class="close" data-action="click->filter#close">&times;</span>
             </div>
             <div class="modal-body">
-              <p>modal content</p>
+
+
+           <%= form_with(url: spots_path, method: :get, local: true) do |form| %>
+            <%= form.label :category_id, "Categories" %>
+            <%= form.select :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, selected: params[:category_id]), include_blank: "All Categories" %>
+            <%= form.submit "Filter" %>
+          <% end %>
+
             </div>
             <div class="modal-footer d-flex justify-content-center">
               <button class="btn btn-purple">Apply</button>
