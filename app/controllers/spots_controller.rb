@@ -11,12 +11,27 @@ class SpotsController < ApplicationController
       end
     end
 
-    if params[:category_id].present?
-      @spots = Spot.where(category_id: params[:category_id])
+    @categories = Category.all
+
+    if params[:category_id].present? && params[:user_id].present?
+      @spots = Spot.joins(:reviews).where(
+        reviews: { user_id: params[:user_id] },
+        category_id: params[:category_id]
+      ).distinct
+    elsif params[:category_id].present?
+      @spots = Spot.joins(:reviews).where(
+        reviews: { user_id: @followings.pluck(:id) },
+        category_id: params[:category_id]
+      ).distinct
+    elsif params[:user_id].present?
+      @spots = Spot.joins(:reviews).where(
+        reviews: { user_id: params[:user_id] }
+      ).distinct
     else
-      @spots = Spot.all
+      @spots = Spot.joins(:reviews).where(
+        reviews: { user_id: @followings.pluck(:id) }
+      ).distinct
     end
-      @categories = Category.all
 
 
     @markers = []

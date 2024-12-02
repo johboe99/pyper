@@ -43,9 +43,11 @@
             <div class="modal-body">
 
 
-           <%= form_with(url: spots_path, method: :get, local: true) do |form| %>
+            <%= form_with(url: spots_path, method: :get, local: true) do |form| %>
             <%= form.label :category_id, "Categories" %>
             <%= form.select :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, selected: params[:category_id]), include_blank: "All Categories" %>
+            <%= form.label :user_id, "Users" %>
+            <%= form.select :user_id, options_for_select(@followings.map { |user| ["#{user.first_name} #{user.last_name}", user.id] }, selected: params[:user_id]), include_blank: "All Users" %>
             <%= form.submit "Filter" %>
           <% end %>
 
