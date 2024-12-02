@@ -1,12 +1,12 @@
-<div class="container-index mt-5 d-flex justify-content-center align-items-center">
+<div class="container-indexmt-5 d-flex justify-content-center align-items-center">
   <div class="row mb-4">
     <div class="col review-form">
       <h3>Write a new review for <%= @spot.name %></h3>
 
       <div class="create-review-form">
         <%= simple_form_for([@spot, @review]) do |f| %>
-          <%= f.input :content, class: "review-p" %>
           <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: {controller: "star-rating"}} %>
+          <%= f.input :content, class: "review-p" %>
           <%= f.submit "Submit Review", class: "btn-purple-full-width" %>
         <% end %>
       </div>
