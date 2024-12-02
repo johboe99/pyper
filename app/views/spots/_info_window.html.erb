@@ -5,12 +5,7 @@
     </div>
     <div class="col-6 d-flex justify-content-center align-items-center text-center">
       <div class="row">
-        <% rating_sum = 0 %>
-        <% spot.reviews.each do |review| %>
-          <% rating_sum += review.rating %>
-        <% end %>
-        <% average_rating = (rating_sum / spot.reviews.count).to_f %>
-        <p class="text-center"><%= star_rating(average_rating, 5) %></p>
+        <p class="text-center"><%= star_rating(spot.average_rating, 5) %></p>
       </div>
     </div>
   </div>
