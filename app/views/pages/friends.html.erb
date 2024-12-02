@@ -1,22 +1,30 @@
 <div class="container-index d-flex justify-content-center align-items-center">
-    <div class="row mb-4">
-      <div class="col" style="width: 360px">
-        <h2 class="index-title mt-4 mx-3">People you might know</h2>
-      </div>
+  <div class="row mb-4">
+    <div class="col" style="width: 360px">
+      <h2 class="index-title mt-4 mx-3">People you might know</h2>
+    </div>
 
-      <div>
+    <div>
       <% @users.each do |user| %>
         <div class="profile d-flex align-items-center">
           <div class="col-3 mx-3">
-            <%= cl_image_tag user.photo.key, class: "avatar-large mb-4 mt-3"%>
+            <%= cl_image_tag user.photo.key, class: "avatar-large mb-4 mt-3" %>
           </div>
           <div class="col">
             <h2><%= user.first_name %> <%= user.last_name %></h2>
             <p class="mb-4"><%= user.email %></p>
           </div>
-            <%= link_to 'Add', "", class: 'btn-purple'%>
+          <div class="col">
+            <% if current_user.followings.include?(user) %>
+  <!-- Show Unfollow button if the user is in followings -->
+            <%= button_to 'Unfollow', following_path(current_user.followers_as_asker.find_by(receiver_id: user.id)), method: :delete, remote: true, id: "user-#{user.id}-button", class: 'btn-purple' %>
+            <% else %>
+              <!-- Show Follow button if the user is not in followings -->
+              <%= button_to 'Follow', followings_path(receiver_id: user.id), method: :post, remote: true, id: "user-#{user.id}-button", class: 'btn-purple' %>
+            <% end %>
+          </div>
         </div>
       <% end %>
-      </div>
     </div>
+  </div>
 </div>
