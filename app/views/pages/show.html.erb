@@ -1,0 +1,25 @@
+<div>
+  <%= cl_image_tag @spot.photo.key %>
+  <p><%= @spot.name %></p>
+  <p><%= star_rating(@average_rating, 5) %></p>
+  <p>Description</p>
+  <p><%= @spot.description %></p>
+  <p>Opening hours</p>
+  <p><%= @spot.opening_hours %></p>
+</div>
+
+<div>
+<p>Reviews</p>
+<% @spot.reviews.each do |review| %>
+  <div>
+    <p><%= cl_image_tag review.user.photo.key, class: "avatar-large" %></p>
+  </div>
+  <div>
+    <p><%=review.user.first_name %></p>
+    <p><%=review.user.last_name %></p>
+    <p><%=review.rating %>/5</p>
+    <p><%=review.content %></p>
+  </div>
+<% end %>
+<%= link_to 'Add Review', new_spot_review_path(@spot), class: 'btn' %>
+</div>

@@ -11,4 +11,9 @@ Rails.application.routes.draw do
   resources :spots, only: [:show, :index] do
     resources :reviews, only: [:new, :create]
   end
+
+  resources :users, only: [] do
+    post 'follow', to: 'follows#create', as: :follow
+    delete 'unfollow', to: 'follows#destroy', as: :unfollow
+  end
 end

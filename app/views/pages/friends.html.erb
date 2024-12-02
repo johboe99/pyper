@@ -1,10 +1,10 @@
 <div class="container-index d-flex justify-content-center align-items-center">
-    <div class="row mb-4">
-      <div class="col" style="width: 360px">
-        <h2 class="index-title mt-4 mx-3">People you might know</h2>
-      </div>
+  <div class="row mb-4">
+    <div class="col" style="width: 360px">
+      <h2 class="index-title mt-4 mx-3">People you might know</h2>
+    </div>
 
-      <div>
+    <div>
       <% @users.each do |user| %>
         <div class="profile d-flex align-items-center">
           <div class="col-3 mx-3">
@@ -14,9 +14,15 @@
             <h2><%= user.first_name %> <%= user.last_name %></h2>
             <p class="mb-4"><%= user.email %></p>
           </div>
-            <%= link_to 'Add', "", class: 'btn-purple'%>
+
+          <!-- Check if current user is following the user -->
+          <% if current_user.followers_as_asker.exists?(receiver: user) %>
+            <%= button_to 'Unfollow', user_unfollow_path(user), method: :delete, class: 'btn-purple' %>
+          <% else %>
+            <%= button_to 'Follow', user_follow_path(user), method: :post, class: 'btn-purple' %>
+          <% end %>
         </div>
       <% end %>
-      </div>
     </div>
+  </div>
 </div>
