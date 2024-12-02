@@ -11,4 +11,18 @@ class User < ApplicationRecord
   has_many :followings, through: :followers_as_receiver, source: :asker
   has_many :followers, through: :followers_as_asker, source: :receiver
   has_one_attached :photo
+
+  def follow(other_user)
+    followers.create(receiver_id: other_user.id)
+  end
+
+  # Unfollow another user
+  def unfollow(other_user)
+    followers.find_by(receiver_id: other_user.id).destroy
+  end
+
+  # Check if a user is being followed
+  def following?(other_user)
+    followed_users.include?(other_user)
+  end
 end
