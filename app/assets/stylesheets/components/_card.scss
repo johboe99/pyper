@@ -19,6 +19,7 @@
   border-radius: 15px;
   margin-bottom: 15px;
   margin-top: 15px;
+  max-width: 100%;
 
 }
 
@@ -33,7 +34,7 @@
 .card-home .card-home-infos {
   box-sizing: border-box;
   padding-top: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   padding-left: 20px;
   flex-direction: column;
   position: relative;
@@ -43,10 +44,9 @@
 .card-home-title {
   font-size: 18px;
   font-weight: semi-bold;
+  margin: 0;
   margin-bottom: 4px;
-  margin-right: 4px;
   color: #EEEEEE;
-  width: 200px;
 }
 
 .card-home .btn-purple {
@@ -59,4 +59,7 @@
   position: absolute;
   right: 16px;
   top: 20px;
+  font-size: 16px;
+  font-weight: semi-bold;
+  color: $grey-200;
 }

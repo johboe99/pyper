@@ -22,7 +22,7 @@
             </div>
           </div>
 
-          <h3> Top Recommendation </h3>
+          <p class="profile-h3">My recommendations</p>
           <div class="card-home">
                 <% if @first_recommendation %>
                   <%= cl_image_tag @first_recommendation.photo.key %>
@@ -33,21 +33,25 @@
                 <% end %>
                 </div>
 
-          <div class="dropdown">
-          <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          More recommendation </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <div class="dropdown mb-4">
+        <button class="btn-drop-down dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          See all
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           <% @recommendations.each do |spot| %>
-            <div class="card-home">
-              <%= cl_image_tag spot.photo.key %>
-               <div class="card-home-infos">
-                <h2 class="card-home-title"><%= spot.name %></h2>
-                <p><%= spot.category.name %></p>
+            <li class="dropdown-item">
+              <div class="card-home mb-5">
+                <%= cl_image_tag spot.photo.key %>
+                <div class="card-home-infos">
+                  <h2 class="card-home-title"><%= spot.name %></h2>
+                  <p><%= spot.category.name %></p>
+                </div>
               </div>
-            </div>
+            </li>
           <% end %>
-      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-purple" %>
+        </ul>
       </div>
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-purple-full-width" %>
     </div>
   </div>
 </div>
