@@ -24,6 +24,7 @@ class SpotsController < ApplicationController
         }
       end
     end
+
   end
 
   def show
