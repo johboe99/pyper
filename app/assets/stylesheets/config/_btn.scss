@@ -4,8 +4,15 @@
   background-color: $deep-purple;
   color: #D3D4FB;
   padding: 10px 20px;
-  margin-bottom: 8px;
+  margin-bottom: 8px auto;
 
+
+   /* Flexbox for alignment */
+   display: inline-flex; /* Ensures inline behavior with icons */
+   align-items: center; /* Vertical alignment for icon and text */
+   gap: 8px;
+
+   white-space: nowrap;
 
   /*text-style*/
   font-size: 16px;
@@ -21,6 +28,11 @@
     color: $deep-purple;
     border-color: $purple-300;
   }
+}
+
+.btn .btn-purple {
+  display: flex;
+
 }
 
 .btn-purple-full-width {

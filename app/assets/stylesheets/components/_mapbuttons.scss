@@ -1,31 +1,33 @@
   /* Map container should fill the entire screen */
   .map-container {
     position: relative;
-    height: 100vh; /* Full viewport height */
-    width: 100%;   /* Full width */
+    height: 100vh;
+    width: 100%;
     overflow: hidden;
   }
 
   /* Map (Mapbox or any map) should fill the container */
   .map {
-    height: 100%; /* Ensure map fills the entire container */
-    width: 100%;  /* Ensure map fills the entire container */
+    height: 100%;
+    width: 100%;
     overflow: hidden;
   }
 
-  /* Button group container (fixed position) */
+  /* Button group container fixed position*/
   .btn-group-container {
     position: fixed;
-    bottom: 135px;  /* 20px from the bottom */
-    left: 50%;     /* Center horizontally */
-    transform: translateX(-50%); /* Offset to center it */
-    z-index: 1000; /* Ensure buttons are on top of the map */
+    bottom: 135px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    gap: 15px;
   }
-  // /* Ensure custom button styles with borders */
-  // .custom-btn-group .btn {
-  //   border-right: 1px solid white !important; /* Border between buttons */
-  // }
 
-  // .custom-btn-group .btn:last-child {
-  //   border-right: none; /* Remove border from the last button */
-  // }
+
+  .btn-group.custom-btn-group {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
