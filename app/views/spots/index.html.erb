@@ -37,24 +37,26 @@
           <%# hide buttons when filter modal is open? %>
           <div class="modal-content">
             <div class="modal-header d-flex justify-content-between">
-              <h2>Modal Header</h2>
+              <h2>Filter Recommendations</h2>
               <span class="close" data-action="click->filter#close">&times;</span>
             </div>
-            <div class="modal-body">
+            <div class="modal-body mt-3">
+              <%= form_with(url: spots_path, method: :get, local: true, class: "form") do |form| %>
+                <div class="form-group">
+                  <%= form.label :category_id, "Category" %>
+                  <%= form.select :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, selected: params[:category_id]), { include_blank: "All Categories" }, { class: "form-control" } %>
+                </div>
 
+                <div class="form-group mt-3">
+                  <%= form.label :user_id, "User" %>
+                  <%= form.select :user_id, options_for_select(@followings.map { |user| ["#{user.first_name} #{user.last_name}", user.id] }, selected: params[:user_id]), { include_blank: "All Users" }, { class: "form-control" } %>
+                </div>
 
-            <%= form_with(url: spots_path, method: :get, local: true) do |form| %>
-            <%= form.label :category_id, "Categories" %>
-            <%= form.select :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, selected: params[:category_id]), include_blank: "All Categories" %>
-            <%= form.label :user_id, "Users" %>
-            <%= form.select :user_id, options_for_select(@followings.map { |user| ["#{user.first_name} #{user.last_name}", user.id] }, selected: params[:user_id]), include_blank: "All Users" %>
-            <%= form.submit "Filter" %>
-          <% end %>
-
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-              <button class="btn btn-purple">Apply</button>
-              <button class="btn btn-purple">Cancel</button>
+                <div class="d-flex justify-content-center mt-3">
+                  <%= form.submit "Apply", class: "btn btn-purple me-3" %>
+                  <%= form.button "Cancel", class: "btn btn-purple", data: { action: "click->filter#close" } %>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
