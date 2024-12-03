@@ -22,7 +22,7 @@
         <h3 class="show-h3">Reviews</h3>
         <% @spot.reviews.each do |review| %>
           <div class="card-show">
-            <%= cl_image_tag review.user.photo.key, class: "avatar-large" %>
+            <%= cl_image_tag review.user.photo.key, class: "avatar" %>
             <div class="card-show-infos">
               <h3><%= review.user.first_name %> <%= review.user.last_name %></h3>
               <p><%= review.content %></p>
