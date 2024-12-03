@@ -1,7 +1,22 @@
 .profile-h3 {
   font-size: 16px;
-  font-weight: thin 100;
-  color: #77838F;
+  font-weight: light;
+  color: $grey-200;
   margin-top: 40px;
-  padding-top: 20px;
+  padding-top: 12px;
+}
+
+.profile p {
+  margin-bottom: 0px;
+  color: $grey-200;
+  font-size: 12px;
+  font-weight: regular;
+}
+
+.profile h2 {
+  font-size: 18px;
+  font-weight: semi-bold;
+  margin-bottom: 4px;
+  margin-right: 0px;
+  color: #EEEEEE;
 }
