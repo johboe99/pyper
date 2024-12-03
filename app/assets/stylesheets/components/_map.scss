@@ -12,7 +12,7 @@
   overflow: hidden;
   background: #2B2B36;
   width: 100%;
-  padding-left: 12px;
+  padding-left: 10px;
   padding-right: 8px;
   border-radius: 12px;
 
@@ -20,22 +20,45 @@
   padding-bottom: 15px;
   flex-direction: column;
   position: relative;
+  justify-content: space-between;
+  white-space: nowrap;
 }
 
 .btn-plus {
   background-color: #2B2B36;
-  border-radius: 50%;
+  border-radius: 50%; /* Ensures the button is circular */
   width: 30px;
   height: 30px;
-  padding: 0;
-  border: 2px solid #9663F6;
-  text-decoration: none;
   display: flex;
+  text-decoration: none;
   justify-content: center;
   align-items: center;
-  outline: none;
+  padding: 0; /* Removes unnecessary padding */
+  border: 2px solid #9663F6;
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
+
+// .mapboxgl-popup-content .col {
+
+//   justify-content: space-between;
+// }
+
+.btn-plus:hover {
+  color: #9663F6;
+  background-color: #3C3C48;
+  border-color: #7B4EDC;
+}
+
+.map-box-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures the content is evenly spaced */
+}
+
+// .map-box-content {
+//   justify-content: space-between;
+//   white-space: nowrap;
+// }
 
 
 .btn-plus:hover {
@@ -68,6 +91,7 @@
 .map-box-title {
   font-size: 16px;
   margin-bottom: 5px;
+  max-width: 5px;
 }
 
 .mapboxgl-popup-tip {
