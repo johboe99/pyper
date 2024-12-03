@@ -1,20 +1,17 @@
 <div class="container-index d-flex justify-content-center align-items-center">
-    <div class="row">
-      <div class="col" style="width: 360px">
-        <h2 class="index-title mx-3">People you might know</h2>
-         <%= form_with(url: friends_path, method: :get, local: true) do |form| %>
-        <div class="input-group">
+  <div class="row">
+    <div class="col" style="width: 360px">
+      <h2 class="index-title mx-3">People you might know</h2>
+      <%= form_with(url: friends_path, method: :get, local: true) do |form| %>
+        <div class="input-group ms-2">
           <%= form.text_field :query,
               placeholder: "Search by name or email",
               class: "form-control dark" %>
-          <div class="input-group-append">
-            <%= form.submit "Search🔍", class: "btn btn-primary custom-button" %>
-          </div>
+          <%= form.submit "Search 🔍", class: "btn custom-button", id: "button-addon2" %>
         </div>
       <% end %>
     </div>
-
-      <div>
+    <div>
       <% @users.each do |user| %>
         <div class="profile d-flex align-items-center">
           <div class="col-3 mx-3">
@@ -24,15 +21,16 @@
             <h2><%= user.first_name %> <%= user.last_name %></h2>
             <p class="mb-4"><%= user.email %></p>
           </div>
-            <% if Follower.find_by(asker: current_user, receiver: user) %>
+          <% if Follower.find_by(asker: current_user, receiver: user) %>
             <% follower = Follower.find_by(asker: current_user, receiver: user) %>
-              <%= link_to 'Remove', follower_path(follower), data:{turbo_method: :delete}, class: 'btn-purple'%>
-            <% else %>
-              <%= button_to 'Add', user_followers_path(user), method: "post", remote: true, class: 'btn-purple'%>
-            <% end %>
+            <%= link_to 'Remove', follower_path(follower), data:{turbo_method: :delete}, class: 'btn-purple'%>
+          <% else %>
+            <%= button_to 'Add', user_followers_path(user), method: "post", remote: true, class: 'btn-purple'%>
+          <% end %>
         </div>
       <% end %>
       <p class="impressum text-center">pyper © All rights reserved.</p>
       </div>
     </div>
+  </div>
 </div>
