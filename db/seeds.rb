@@ -24,7 +24,7 @@ puts "category 1 created"
 category_2 = Category.create(name: "Restaurant", icon: "")
 puts "category 2 created"
 
-category_3 = Category.create(name: "Cafe", icon: "")
+category_3 = Category.create(name: "Café", icon: "")
 puts "category 3 created"
 
 puts "generating spots now..."
@@ -490,5 +490,3 @@ tag_1 = Tag.create(name: "Fine Dining")
 tag_1 = Tag.create(name: "Fine Dining")
 
 tag_1 = Tag.create(name: "Fine Dining")
-
-
