@@ -2,16 +2,14 @@
     <div class="row">
       <div class="col" style="width: 360px">
         <h2 class="index-title mx-3">People you might know</h2>
-         <%= form_with(url: friends_path, method: :get, local: true) do |form| %>
-        <div class="input-group">
-          <%= form.text_field :query,
-              placeholder: "Search by name or email",
-              class: "form-control dark" %>
-          <div class="input-group-append">
-            <%= form.submit "Search🔍", class: "btn btn-primary custom-button" %>
+        <%= form_with(url: friends_path, method: :get, local: true) do |form| %>
+          <div class="input-group">
+            <%= form.text_field :query,
+                placeholder: "Search by name or email",
+                class: "form-control dark" %>
+            <%= form.submit "Search 🔍", class: "btn custom-button", id: "button-addon2" %>
           </div>
-        </div>
-      <% end %>
+        <% end %>
     </div>
 
       <div>
