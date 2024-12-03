@@ -20,7 +20,7 @@
 
       <div class="reviews-section">
         <h3 class="show-h3">Reviews</h3>
-        <% @spot.reviews.each do |review| %>
+        <% @followings_reviews.each do |review| %>
           <div class="card-show">
             <%= cl_image_tag review.user.photo.key, class: "avatar" %>
             <div class="card-show-infos">

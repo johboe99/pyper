@@ -52,17 +52,8 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
-    @user = current_user
-    @followings = @user.followings
-    @spots = []
-
-    @followings.each do |following|
-      following.reviews.each do |review|
-        @spots << review.spot
-      end
-    end
-
     @average_rating = @spot.average_rating
-
+    @followings = current_user.followings
+    @followings_reviews = @spot.reviews.where(user_id: @followings.pluck(:id))
   end
 end
