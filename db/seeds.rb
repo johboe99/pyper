@@ -433,60 +433,64 @@ puts "these should be enough"
 
 tag_1 = Tag.create(name: "Fine Dining")
 
-tag_2 = Tag.create(name: "Casual Eats")
+tag_2 = Tag.create(name: "Gourmet Cuisine")
 
-tag_3 = Tag.create(name: "Family-Friendly")
+tag_3 = Tag.create(name: "Authentic Flavors")
 
-tag_4 = Tag.create(name: "Farm-to-table")
+tag_4 = Tag.create(name: "Chef-Inspired")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_5 = Tag.create(name: "Trendy Atmosphere")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_6 = Tag.create(name: "Romantic Setting")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_7 = Tag.create(name: "Outdoor Dinning")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_8 = Tag.create(name: "Modern Cuisine")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_9 = Tag.create(name: "Cozy Ambience")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_10 = Tag.create(name: "Vegan Options")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_11 = Tag.create(name: "Gluten-Free Friendly")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_12 = Tag.create(name: "Seafood Specialties")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_13 = Tag.create(name: "Steakhouse Vibes")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_14 = Tag.create(name: "Craft Cocktails")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_15 = Tag.create(name: "International Dishes")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_16 = Tag.create(name: "Fusion Cuisine")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_17 = Tag.create(name: "Brunch Spot")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_18 = Tag.create(name: "Live Entertainment")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_19 = Tag.create(name: "Affordable Luxury")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_20 = Tag.create(name: "kid-friendly Menu")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_21 = Tag.create(name: "Upscale Bar")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_22 = Tag.create(name: "Seasonal Menu")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_23 = Tag.create(name: "All-Day Breakfast")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_24 = Tag.create(name: "Tapas & Small Plates")
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_25 = Tag.create(name: "Foodie Destination")
+puts "tags are created"
 
-tag_1 = Tag.create(name: "Fine Dining")
+review_tag_1 = ReviewsTag.create(tag: tag_1, review: review_2)
 
-tag_1 = Tag.create(name: "Fine Dining")
+review_tag_2 = ReviewsTag.create(tag: tag_2, review: review_2)
 
-tag_1 = Tag.create(name: "Fine Dining")
+review_tag_2 = ReviewsTag.create(tag: tag_4, review: review_2)
 
-tag_1 = Tag.create(name: "Fine Dining")
+review_tag_4 = ReviewsTag.create(tag: tag_3, review: review_2)
 
-tag_1 = Tag.create(name: "Fine Dining")
+review_tag_5 = ReviewsTag.create(tag: tag_6, review: review_2)
+
+review_tag_6 = ReviewsTag.create(tag: tag_5, review: review_2)
+puts "Review Tags are created"

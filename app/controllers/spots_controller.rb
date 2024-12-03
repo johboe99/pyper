@@ -55,5 +55,9 @@ class SpotsController < ApplicationController
     @average_rating = @spot.average_rating
     @followings = current_user.followings
     @followings_reviews = @spot.reviews.where(user_id: @followings.pluck(:id))
+
+    followings_ids = current_user.followings.pluck(:id)
+    Review.where(spot: @spot, user: followings_ids).map { |review| review.tags.pluck(:name) }.flatten
+    @tag_names = Review.where(spot: @spot, user: followings_ids).map { |review| review.tags.pluck(:name) }.flatten.uniq
   end
 end
