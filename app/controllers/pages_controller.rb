@@ -22,6 +22,11 @@ class PagesController < ApplicationController
   end
 
   def friends
-    @users = User.all
+    if params[:query].present?
+      query = params[:query].downcase
+      @users = User.where("LOWER(first_name) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(email) LIKE ?", "%#{query}%", "%#{query}%", "%#{query}%")
+    else
+      @users = User.all
+    end
   end
 end
