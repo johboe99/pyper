@@ -30,3 +30,5 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:content, :rating, tag_ids: [])
   end
 end
+
+
