@@ -25,6 +25,7 @@
 @import "components/navbar";
 @import "components/filtermodal";
 @import "pages/index";
+@import "components/friends";
 
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
 @import url("https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css");
@@ -34,6 +35,6 @@ html, body {
 }
 
 body {
-  padding-bottom: 120px; /* Adjust this value based on your navbar's height */
+  padding-bottom: 120px;
   padding-top: 60px;
 }

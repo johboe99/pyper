@@ -1,0 +1,37 @@
+.input-group .form-control {
+  background-color: #17171A;
+  border-color: #560EDD;
+  color: $light-gray;
+  border-radius: 40px;
+
+  &:active {
+  border-color: $purple-200;
+  background-color: #3a3a3e;
+
+  }
+
+  &:focus {
+    border-color: $purple-300;
+    background-color: #141415;
+
+    }
+}
+
+#button-addon2 {
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: #999;
+  font-size: 14px;
+  font-weight: light;
+  padding-left: 8px;
+  opacity: 0.8;
+}
+
+.friends-title {
+  font-size: 18px;
+  color: $light-grey-text;
+  padding-bottom: 10px;
+
+}
