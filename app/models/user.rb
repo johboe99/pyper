@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :followings, through: :followers_as_asker, source: :receiver
   has_one_attached :photo
 
-  after_create_commit :set_default_photo
+  after_create_commit :set_default_photo, unless: -> { photo.attached? }
 
   private
 
