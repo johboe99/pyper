@@ -30,12 +30,11 @@
 .btn-drop-down {
   width: 100%;
   display: block;
-  text-align: center;
+  text-align: right;
   background-color: #17171A;
   color: $light-grey-text;
-  padding: 10px;
-  border: 1px solid #6A28FC;
-  border-radius: 40px;
+  text-decoration: none;
+  border: none;
 
   &:active {
     background-color: #17171A;
@@ -56,4 +55,21 @@
 .dropdown-item:hover {
   background-color: #17171A;
   color: #FFFFFF;
+}
+
+.btn-new-recommendation {
+  width: 100%;
+  display: block;
+  text-align: center;
+  background-color: #17171A;
+  color: $light-grey-text;
+  padding: 10px;
+  text-decoration: none;
+  border: 1px solid #6A28FC;
+  border-radius: 40px;
+
+  &:active {
+    background-color: #17171A;
+    border-color: #9A67EA;
+  }
 }
