@@ -1,13 +1,13 @@
 <div class="container-index d-flex justify-content-center align-items-center">
   <div class="row">
     <div class="col" style="width: 360px">
-      <h2 class="index-title mx-3 mt-3">People you might know</h2>
+      <h3 class="friends-title mx-3 mt-3">People you might know</h3>
       <%= form_with(url: friends_path, method: :get, local: true) do |form| %>
         <div class="input-group">
           <%= form.text_field :query,
               placeholder: "Search by name or email",
               class: "form-control" %>
-          <%= form.submit "Search 🔍", class: "btn custom-button", id: "button-addon2" %>
+          <%= form.submit "Search 🔍", class: "btn-purple", id: "button-addon2" %>
         </div>
       <% end %>
     </div>
