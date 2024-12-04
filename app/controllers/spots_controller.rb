@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
-  def index
 
+  def index
     @user = current_user
     @followings = @user.followings
     @spots = []
@@ -50,6 +50,20 @@ class SpotsController < ApplicationController
     end
   end
 
+  def new
+    @spot = Spot.new
+  end
+
+  def create
+    @spot = Spot.new(spot_params)
+
+    if @spot.save
+      redirect_to new_spot_review_path(@spot), notice: 'Spot was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def show
     @spot = Spot.find(params[:id])
     @average_rating = @spot.average_rating
@@ -60,4 +74,12 @@ class SpotsController < ApplicationController
     Review.where(spot: @spot, user: followings_ids).map { |review| review.tags.pluck(:name) }.flatten
     @tag_names = Review.where(spot: @spot, user: followings_ids).map { |review| review.tags.pluck(:name) }.flatten.uniq
   end
+
+  private
+
+  def spot_params
+    params.require(:spot).permit(:name, :description, :address, :photo, :category_id, :opening_hours)
+  end
+
+
 end

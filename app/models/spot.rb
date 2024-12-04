@@ -3,9 +3,11 @@ class Spot < ApplicationRecord
   has_many :reviews
 
   has_one_attached :photo
+  validates :photo, presence: true
   validates :address, presence: true
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  validates :opening_hours, presence: true
 
   def average_rating
     if self.reviews.count > 0
@@ -14,8 +16,6 @@ class Spot < ApplicationRecord
       0
     end
   end
-
-
 end
 
 

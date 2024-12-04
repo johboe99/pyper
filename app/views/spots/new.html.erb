@@ -1,0 +1,21 @@
+
+<div class="container-index mt-5 d-flex justify-content-center align-items-center">
+  <div class="row mb-4">
+    <div class="col review-form mt-3">
+      <h1 class= "mx-2">Create a New Spot </h1>
+
+      <div class="create-review-form">
+        <%= simple_form_for @spot, local: true do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description, as: :text %>
+        <%= f.input :address %>
+        <%= f.input :opening_hours %>
+        <%= f.association :category %>
+        <%= f.file_field :photo %>
+        <%= f.submit "Create Spot", class: "btn-purple-full-width" %>
+      <% end %>
+    </div>
+
+    </div>
+  </div>
+</div>
