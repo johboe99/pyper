@@ -32,7 +32,9 @@
       </div>
 
       <%= yield %>
-      <%= render "shared/navbar" %>
+       <% if current_user %>
+        <%= render "shared/navbar" %>
+      <% end %>
     </div>
   </body>
 </html>
