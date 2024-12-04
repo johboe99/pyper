@@ -432,56 +432,36 @@ review_29 = Review.create(content: "Decent experience.", rating: 3, spot_id: spo
 review_30 = Review.create(content: "Would come again.", rating: 4, spot_id: spot_40.id, user_id: user_1.id)
 puts "these should be enough"
 
-tag_1 = Tag.create(name: "Fine Dining")
+tag_1 = Tag.create(name: "Italian")
 
-tag_2 = Tag.create(name: "Gourmet Cuisine")
+tag_2 = Tag.create(name: "French")
 
-tag_3 = Tag.create(name: "Authentic Flavors")
+tag_3 = Tag.create(name: "Asian")
 
-tag_4 = Tag.create(name: "Chef-Inspired")
+tag_4 = Tag.create(name: "Tapas")
 
-tag_5 = Tag.create(name: "Trendy Atmosphere")
+tag_5 = Tag.create(name: "Middle Eastern")
 
-tag_6 = Tag.create(name: "Romantic Setting")
+tag_6 = Tag.create(name: "Vegan Options")
 
-tag_7 = Tag.create(name: "Outdoor Dinning")
+tag_7 = Tag.create(name: "Fine Dining")
 
-tag_8 = Tag.create(name: "Modern Cuisine")
+tag_8 = Tag.create(name: "Trending")
 
-tag_9 = Tag.create(name: "Cozy Ambience")
+tag_9 = Tag.create(name: "Hidden Gem")
 
-tag_10 = Tag.create(name: "Vegan Options")
+tag_10 = Tag.create(name: "Aperitivo")
 
-tag_11 = Tag.create(name: "Gluten-Free Friendly")
+tag_11 = Tag.create(name: "Brunch")
 
-tag_12 = Tag.create(name: "Seafood Specialties")
+tag_12 = Tag.create(name: "Cocktails")
 
-tag_13 = Tag.create(name: "Steakhouse Vibes")
+tag_13 = Tag.create(name: "Party")
 
-tag_14 = Tag.create(name: "Craft Cocktails")
+tag_14 = Tag.create(name: "Date Spot")
 
-tag_15 = Tag.create(name: "International Dishes")
+tag_15 = Tag.create(name: "Family Friendly")
 
-tag_16 = Tag.create(name: "Fusion Cuisine")
-
-tag_17 = Tag.create(name: "Brunch Spot")
-
-tag_18 = Tag.create(name: "Live Entertainment")
-
-tag_19 = Tag.create(name: "Affordable Luxury")
-
-tag_20 = Tag.create(name: "kid-friendly Menu")
-
-tag_21 = Tag.create(name: "Upscale Bar")
-
-tag_22 = Tag.create(name: "Seasonal Menu")
-
-tag_23 = Tag.create(name: "All-Day Breakfast")
-
-tag_24 = Tag.create(name: "Tapas & Small Plates")
-
-tag_25 = Tag.create(name: "Foodie Destination")
-puts "tags are created"
 
 review_tag_1 = ReviewsTag.create(tag: tag_1, review: review_2)
 
