@@ -5,21 +5,18 @@
       <h2 class="show-title text-center"><%= @spot.name %></h2>
       <p class="text-center"><%= star_rating(@average_rating, 5) %></p>
 
+      <% if @tag_names.length > 0 %>
+        <div class="tag-container text-center">
+          <% @tag_names.each do |tag_name| %>
+            <button class="tag"><%= tag_name %></button>
+          <% end %>
+        </div>
+      <% end %>
+
       <div class="description-section">
         <h3 class="show-h3">Description</h3>
         <p><%= @spot.description %></p>
       </div>
-
-      <% if @tag_names.length > 0 %>
-        <div class="tag-container">
-          <h3 class="show-h3">Tags</h3>
-          <div class="btn-group">
-            <% @tag_names.each do |tag_name| %>
-            <button type="button" class="btn tag-button"><%= tag_name %></button>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
 
       <div class="opening-hours-section">
         <h3 class="show-h3">Opening Hours</h3>
