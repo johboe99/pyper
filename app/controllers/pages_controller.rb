@@ -29,4 +29,10 @@ class PagesController < ApplicationController
       @users = User.all
     end
   end
+
+  def spot_review
+    @spot = Spot.find(params[:id])
+    @my_review = @spot.reviews.find_by(user: current_user)
+    @tag_names = Review.where(spot: @spot, user: current_user).map { |review| review.tags.pluck(:name) }.flatten.uniq
+  end
 end

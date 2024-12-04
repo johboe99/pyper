@@ -48,7 +48,7 @@
                   <p><%= spot.category.name %></p>
                   <p class="card-home-rating"><%= star_rating(spot.average_rating, 5) %></p>
                </div>
-                <%= link_to 'See Details', spot, class: 'btn-purple' %>
+                <%= link_to 'See Details', spot_review_path(spot), class: 'btn-purple' %>
               </div>
             </li>
           <% end %>
