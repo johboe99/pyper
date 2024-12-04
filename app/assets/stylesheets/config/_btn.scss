@@ -30,6 +30,38 @@
   }
 }
 
+.btn-purple-remove {
+   /*shape and space*/
+   border-radius: 40px;
+   background-color: #D3D4FB;
+   color: $deep-purple;
+   padding: 10px 20px;
+   margin-bottom: 8px auto;
+
+
+    /* Flexbox for alignment */
+    display: inline-flex; /* Ensures inline behavior with icons */
+    align-items: center; /* Vertical alignment for icon and text */
+    gap: 8px;
+
+    white-space: nowrap;
+
+   /*text-style*/
+   font-size: 16px;
+   text-decoration: none;
+   font-weight: regular;
+
+   /*other styles*/
+
+   display: inline-block;
+
+   &:active {
+     background-color: $deep-purple;
+     color: #D3D4FB;
+     border-color: #D3D4FB;
+   }
+}
+
 .btn .btn-purple {
   display: flex;
 
