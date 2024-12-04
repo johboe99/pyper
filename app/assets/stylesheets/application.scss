@@ -31,17 +31,11 @@
 
 html, body {
   background-color: #17171A;
-  padding-top: env(safe-area-inset-top);
 }
 
 body {
   padding-bottom: 120px; /* Adjust this value based on your navbar's height */
+  padding-top: 60px;
   padding-top: env(safe-area-inset-top);
   background-color: #17171A;
-  padding-top: 60px;
-}
-
-header {
-  background-color: #17171A;
-  padding-top: env(safe-area-inset-top);  /* Padding to avoid the notch area */
 }
