@@ -1,7 +1,7 @@
 <div class="container-index d-flex justify-content-center align-items-center">
   <div class="row">
     <div class="col" style="width: 360px">
-      <h2 class="index-title mx-3">People you might know</h2>
+      <h2 class="index-title mx-3 mt-3">People you might know</h2>
       <%= form_with(url: friends_path, method: :get, local: true) do |form| %>
         <div class="input-group ms-2">
           <%= form.text_field :query,
