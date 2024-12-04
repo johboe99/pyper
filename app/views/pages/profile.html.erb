@@ -7,7 +7,7 @@
             <p class="mb-4"><%= @user.email %></p>
           </div>
 
-          <div class="row text-center profile my-4 d-flex align-items-center profile">
+          <div class="row text-center profile mt-4 d-flex align-items-center profile">
             <div class="col d-flex flex-column align-items-center border-end">
               <h2><%= @reviews.count %></h2>
               <p>Recommendations</p>
@@ -21,9 +21,6 @@
               <p>Following</p>
             </div>
           </div>
-          <div class="text-center">
-            <%= link_to "Create a Spot", new_spot_path, class: "btn-purple-full-width" %>
-          </div>
           <p class="profile-h3">My recommendations</p>
           <div class="card-home">
                 <% if @first_recommendation %>
@@ -31,15 +28,17 @@
                   <div class="card-home-infos">
                     <h3 class="card-home-title"><%= @first_recommendation.name %></h3>
                     <p><%= @first_recommendation.category.name %></p>
+                    <p class="card-home-rating"><%= star_rating(@first_recommendation.average_rating, 5) %></p>
                     </div>
+                    <%= link_to 'See Details', @first_recommendation, class: 'btn-purple' %>
                 <% end %>
                 </div>
 
-        <div class="dropdown mb-4">
-        <button class="btn-drop-down dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      <div class="dropdown mb-4">
+        <button class="btn-drop-down dropdown-toggle" data-bs-toggle="dropdown">
           See all
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <ul class="dropdown-menu">
           <% @recommendations.each do |spot| %>
             <li class="dropdown-item">
               <div class="card-home mb-2">
@@ -47,12 +46,19 @@
                 <div class="card-home-infos">
                   <h2 class="card-home-title"><%= spot.name %></h2>
                   <p><%= spot.category.name %></p>
-                </div>
+                  <p class="card-home-rating"><%= star_rating(spot.average_rating, 5) %></p>
+               </div>
+                <%= link_to 'See Details', spot, class: 'btn-purple' %>
               </div>
             </li>
           <% end %>
         </ul>
       </div>
+
+      <div class="text-center">
+        <%= link_to "Add Recommendation", new_spot_path, class: "btn-new-recommendation" %>
+      </div>
+
       <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-purple-full-width" %>
       <p class="impressum text-center">pyper © All rights reserved.</p>
     </div>
