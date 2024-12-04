@@ -3,7 +3,7 @@
     <div class="col" style="width: 360px">
       <h2 class="index-title mx-3 mt-3">People you might know</h2>
       <%= form_with(url: friends_path, method: :get, local: true) do |form| %>
-        <div class="input-group ms-2">
+        <div class="input-group">
           <%= form.text_field :query,
               placeholder: "Search by name or email",
               class: "form-control" %>
