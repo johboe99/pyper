@@ -2,6 +2,7 @@
 @import "home";
 
 .container-home {
+  padding-top: calc(70px + env(safe-area-inset-top)); /* 70px is the height of the topbar */
   width: 100%;
   position: relative;
   background-color: #17171a;
