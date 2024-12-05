@@ -427,19 +427,8 @@ review_19 = Review.create(content: "Friendly staff!", rating: 4, spot_id: spot_2
 review_20 = Review.create(content: "Highly recommend!", rating: 5, spot_id: spot_43.id, user_id: user_3.id)
 
 puts "another 10 fresh out the oven"
-review_21 = Review.create(content: "Great service.", rating: 3, spot_id: spot_51.id, user_id: user_4.id)
-
-review_22 = Review.create(content: "Outstanding seafood.", rating: 5, spot_id: spot_52.id, user_id: user_4.id)
-
-review_23 = Review.create(content: "Will definitely return!", rating: 4, spot_id: spot_53.id, user_id: user_4.id)
-
-review_24 = Review.create(content: "Good vibes, okay food.", rating: 3, spot_id: spot_45.id, user_id: user_4.id)
-
-review_25 = Review.create(content: "Fantastic happy hour.", rating: 4, spot_id: spot_24.id, user_id: user_4.id)
 
 review_26 = Review.create(content: "Pizza was perfect!", rating: 5, spot_id: spot_19.id, user_id: user_3.id)
-
-review_27 = Review.create(content: "Lovely atmosphere.", rating: 5, spot_id: spot_30.id, user_id: user_4.id)
 
 review_28 = Review.create(content: "Good for groups.", rating: 4, spot_id: spot_33.id, user_id: user_2.id)
 
