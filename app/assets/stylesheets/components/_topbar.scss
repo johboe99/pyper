@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 70px; /* Adjust the height as needed */
+  height: calc(70px + env(safe-area-inset-top)); /* Adjust the height as needed */
   display: flex;
   align-items: center;
   justify-content: space-between;
