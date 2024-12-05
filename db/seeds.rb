@@ -163,7 +163,7 @@ spot_33 = Spot.create(name: "Lode & Stijn", description: "Modern European cuisin
 file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1732705605/lodestijn_g01pi0.jpg")
 spot_33.photo.attach(io: file, filename: "lodeandstijn", content_type: "image/jpg")
 
-spot_34 = Spot.create(name: "ORA", description: "Elegant café in a former pharmacy with a focus on cocktails and small plates.", address: "Oranienplatz 14, 10999 Berlin", category_id: category_1.id, opening_hours: "6:00 PM - 12:00 AM")
+spot_34 = Spot.create(name: "ORA", description: "Elegant restaurant in a former pharmacy with a focus on cocktails and small plates.", address: "Oranienplatz 14, 10999 Berlin", category_id: category_1.id, opening_hours: "6:00 PM - 12:00 AM")
 file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1732705606/ora_re1xlf.jpg")
 spot_34.photo.attach(io: file, filename: "ora", content_type: "image/jpg")
 
