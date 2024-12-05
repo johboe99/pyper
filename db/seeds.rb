@@ -248,6 +248,15 @@ spot_54.photo.attach(io: file, filename: "calibocca", content_type: "image/jpg")
 spot_55 = Spot.create(name: "Al Contadino Mozzarella Bar & Bottega", description: "Rustic Italian dishes and cheese platters as well as wine and cocktails in a friendly restaurant with exposed brickwork.", address: "Auguststraße 34, 10119 Berlin", category_id: category_2.id, opening_hours: "12:00 - 22:30")
 file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1732550254/mozzarellabar_b41ep2.jpg")
 spot_55.photo.attach(io: file, filename: "mozarellabar", content_type: "image/jpg")
+
+spot_56 = Spot.create(name: "Le Wagon Bar", description: "Unwind and relax after a hectic day of coding.", address: "Rudi-Dutschke-Straße 26, 10969 Berlin", category_id: category_1.id, opening_hours: "10:00 - 03:00")
+file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1733411055/6582d1fd5777e227180b6532_qfui9261cqngt9kng40odff38tpf_h82d3y.jpg")
+spot_56.photo.attach(io: file, filename: "lewagonbar", content_type: "image/jpg")
+
+spot_57 = Spot.create(name: "Java House", description: "Authentic Indonesian cuisine near Leopoldplatz.", address: "Brüsseler Str. 42A, 13353 Berlin", category_id: category_2.id, opening_hours: "17:00 - 21:00")
+file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1733411743/javahouse_z17mqw.jpg")
+spot_57.photo.attach(io: file, filename: "javahouse", content_type: "image/jpg")
+
 puts "5 more spots created"
 puts "finally done generating spots"
 
@@ -307,10 +316,23 @@ file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1732713775/s
 user_11.photo.attach(io: file, filename: "sagi.jpg", content_type: "image/jpg")
 puts "user 11 created"
 
+user_12 = User.create(first_name: "Soojin", last_name: "Kim", email: "soojin@kim.com", password: "123456", description: "")
+file = URI.open("https://res.cloudinary.com/dsrno7wgu/image/upload/v1733399209/soojin_zbhtvj.jpg")
+user_12.photo.attach(io: file, filename: "soojin.jpg", content_type: "image/jpg")
+puts "user 12 created"
+
+user_13 = User.create(first_name: "Kat", last_name: "Syddal", email: "kate@syddall.com", password: "123456", description: "")
+file = URI.open("https://res.cloudinary.com/dsrno7wgu/image/upload/v1733399209/kat_owbm6w.png")
+user_13.photo.attach(io: file, filename: "kat.jpg", content_type: "image/jpg")
+puts "user 13 created"
+
+user_14 = User.create(first_name: "Lucas", last_name: "Grüner", email: "lucas@grüner.com", password: "123456", description: "")
+file = URI.open("https://res.cloudinary.com/dmilkgxzg/image/upload/v1733411855/lucas_kifid7.jpg")
+user_14.photo.attach(io: file, filename: "lucas.jpg", content_type: "image/jpg")
+puts "user 14 created"
+
 puts "generating follows now"
 follow_1 = Follower.create(asker_id: user_2.id, receiver_id: user_1.id)
-
-follow_2 = Follower.create(asker_id: user_3.id, receiver_id: user_1.id)
 
 follow_3 = Follower.create(asker_id: user_4.id, receiver_id: user_1.id)
 
@@ -348,23 +370,17 @@ follow_19 = Follower.create(asker_id: user_1.id, receiver_id: user_10.id)
 
 follow_20 = Follower.create(asker_id: user_1.id, receiver_id: user_11.id)
 
-follow_21 = Follower.create(asker_id: user_3.id, receiver_id: user_2.id)
+follow_21 = Follower.create(asker_id: user_2.id, receiver_id: user_3.id)
 
-follow_22 = Follower.create(asker_id: user_3.id, receiver_id: user_4.id)
+follow_22 = Follower.create(asker_id: user_2.id, receiver_id: user_4.id)
 
-follow_23 = Follower.create(asker_id: user_3.id, receiver_id: user_5.id)
+follow_23 = Follower.create(asker_id: user_2.id, receiver_id: user_5.id)
 
-follow_24 = Follower.create(asker_id: user_2.id, receiver_id: user_3.id)
+follow_24 = Follower.create(asker_id: user_4.id, receiver_id: user_2.id)
 
-follow_25 = Follower.create(asker_id: user_2.id, receiver_id: user_4.id)
+follow_25 = Follower.create(asker_id: user_4.id, receiver_id: user_3.id)
 
-follow_26 = Follower.create(asker_id: user_2.id, receiver_id: user_5.id)
-
-follow_27 = Follower.create(asker_id: user_4.id, receiver_id: user_2.id)
-
-follow_28 = Follower.create(asker_id: user_4.id, receiver_id: user_3.id)
-
-follow_29 = Follower.create(asker_id: user_4.id, receiver_id: user_5.id)
+follow_26 = Follower.create(asker_id: user_4.id, receiver_id: user_5.id)
 puts "Follows have been created"
 
 puts "time for some reviews"
@@ -386,14 +402,15 @@ review_8 = Review.create(content: "Best cocktails ever.", rating: 3, spot_id: sp
 
 review_9 = Review.create(content: "Cozy and charming.", rating: 3, spot_id: spot_23.id, user_id: user_1.id)
 
-review_10 = Review.create(content: "Service was slow.", rating: 3, spot_id: spot_33.id, user_id: user_1.id)
+review_10 = Review.create(content: "Service was great.", rating: 3, spot_id: spot_33.id, user_id: user_1.id)
+
 puts "first 10 are done"
 
 review_11 = Review.create(content: "Loved the ambiance!", rating: 5, spot_id: spot_41.id, user_id: user_2.id)
 
 review_12 = Review.create(content: "Perfect date spot.", rating: 4, spot_id: spot_23.id, user_id: user_2.id)
 
-review_13 = Review.create(content: "Drinks were pricey.", rating: 3, spot_id: spot_35.id, user_id: user_2.id)
+review_13 = Review.create(content: "Drinks were a little pricey.", rating: 3, spot_id: spot_35.id, user_id: user_2.id)
 
 review_14 = Review.create(content: "Fresh and flavorful.", rating: 4, spot_id: spot_36.id, user_id: user_2.id)
 
@@ -403,14 +420,14 @@ review_16 = Review.create(content: "Great vegan options.", rating: 4, spot_id: s
 
 review_17 = Review.create(content: "Incredible burgers!", rating: 5, spot_id: spot_38.id, user_id: user_3.id)
 
-review_18 = Review.create(content: "Music was too loud.", rating: 3, spot_id: spot_49.id, user_id: user_3.id)
+review_18 = Review.create(content: "Music was quite loud.", rating: 3, spot_id: spot_49.id, user_id: user_3.id)
 
 review_19 = Review.create(content: "Friendly staff!", rating: 4, spot_id: spot_23.id, user_id: user_3.id)
 
 review_20 = Review.create(content: "Highly recommend!", rating: 5, spot_id: spot_43.id, user_id: user_3.id)
-puts "another 10 fresh out the oven"
 
-review_21 = Review.create(content: "Mediocre at best.", rating: 3, spot_id: spot_51.id, user_id: user_4.id)
+puts "another 10 fresh out the oven"
+review_21 = Review.create(content: "Great service.", rating: 3, spot_id: spot_51.id, user_id: user_4.id)
 
 review_22 = Review.create(content: "Outstanding seafood.", rating: 5, spot_id: spot_52.id, user_id: user_4.id)
 
@@ -429,8 +446,22 @@ review_28 = Review.create(content: "Good for groups.", rating: 4, spot_id: spot_
 review_29 = Review.create(content: "Decent experience.", rating: 3, spot_id: spot_53.id, user_id: user_1.id)
 
 review_30 = Review.create(content: "Would come again.", rating: 4, spot_id: spot_40.id, user_id: user_1.id)
-puts "these should be enough"
 
+review_31 = Review.create(content: "Romantic atmosphere 🥰", rating: 4, spot_id: spot_15.id, user_id: user_12.id)
+
+review_32 = Review.create(content: "Free shots!", rating: 5, spot_id: spot_15.id, user_id: user_1.id)
+
+review_33 = Review.create(content: "Change your life - learn to drink!", rating: 5, spot_id: spot_56.id, user_id: user_12.id)
+
+review_34 = Review.create(content: "Free beer, terrible coffee!", rating: 3, spot_id: spot_56.id, user_id: user_13.id)
+
+review_35 = Review.create(content: "Great vibes!", rating: 5, spot_id: spot_50.id, user_id: user_12.id)
+
+review_36 = Review.create(content: "Great vibes!", rating: 4, spot_id: spot_49.id, user_id: user_12.id)
+
+review_37 = Review.create(content: "Great food but nobody wanted to talk about my new javascript feature 😣", rating: 4, spot_id: spot_57.id, user_id: user_14.id)
+
+puts "these should be enough"
 tag_1 = Tag.create(name: "Italian")
 
 tag_2 = Tag.create(name: "French")
@@ -462,15 +493,23 @@ tag_14 = Tag.create(name: "Date Spot")
 tag_15 = Tag.create(name: "Family Friendly")
 
 
-review_tag_1 = ReviewsTag.create(tag: tag_1, review: review_2)
+review_tag_1 = ReviewsTag.create(tag: tag_12, review: review_2)
 
-review_tag_2 = ReviewsTag.create(tag: tag_2, review: review_2)
+review_tag_2 = ReviewsTag.create(tag: tag_8, review: review_2)
 
-review_tag_2 = ReviewsTag.create(tag: tag_4, review: review_2)
+review_tag_3 = ReviewsTag.create(tag: tag_14, review: review_2)
 
-review_tag_4 = ReviewsTag.create(tag: tag_3, review: review_2)
+review_tag_4 = ReviewsTag.create(tag: tag_12, review: review_31)
 
-review_tag_5 = ReviewsTag.create(tag: tag_6, review: review_2)
+review_tag_5 = ReviewsTag.create(tag: tag_14, review: review_32)
 
-review_tag_6 = ReviewsTag.create(tag: tag_5, review: review_2)
+review_tag_6 = ReviewsTag.create(tag: tag_9, review: review_33)
+
+review_tag_7 = ReviewsTag.create(tag: tag_14, review: review_33)
+
+review_tag_8 = ReviewsTag.create(tag: tag_3, review: review_37)
+
+review_tag_8 = ReviewsTag.create(tag: tag_13, review: review_37)
+
+
 puts "Review Tags are created"
