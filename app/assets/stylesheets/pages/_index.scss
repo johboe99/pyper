@@ -3,10 +3,10 @@
 
 .container-home {
   width: 100%;
-  top: env(safe-area-inset-top); /* Ensures the topbar starts below the notch */
-  padding-top: env(safe-area-inset-top);
   position: relative;
   background-color: #17171a;
+  top: env(safe-area-inset-top); /* Ensures the topbar starts below the notch */
+  padding-top: env(safe-area-inset-top);
 
   text-align: left;
   color: #f6f8fa;
