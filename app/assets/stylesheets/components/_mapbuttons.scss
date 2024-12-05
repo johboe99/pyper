@@ -13,21 +13,80 @@
     overflow: hidden;
   }
 
-  /* Button group container fixed position*/
-  .btn-group-container {
-    position: fixed;
-    bottom: 135px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    display: flex;
-    gap: 15px;
-  }
+/* Container for the button group */
+.btn-group-container {
+  position: fixed;
+  bottom: 135px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  gap: 15px;
+}
 
+/* Custom button group styling */
+.btn-group.custom-btn-group {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
 
-  .btn-group.custom-btn-group {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-  }
+/* Override styles for the button group buttons */
+.btn-group .btn-purple {
+  /* Shape and space */
+  background-color: #560EDD; /* Custom background color */
+  color: #D3D4FB;
+  border-radius: 40px;
+  padding: 10px 20px;
+  margin: 0;
+
+  /* Flexbox for alignment */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+
+  /* Text styling */
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: regular;
+  border: 1px solid transparent; /* Ensure no default border */
+  cursor: pointer;
+
+  /* Transition for smoother background color change */
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+
+  /* Box shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove the gap between buttons in the group */
+.btn-group .btn-purple:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group .btn-purple:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Hover effect for button */
+.btn-group .btn-purple:hover {
+  background-color: #D3D4FB;
+  color: #6A4C94;
+}
+
+/* Active state for button */
+.btn-group .btn-purple:active {
+  background-color: #D3D4FB;
+  color: #6A4C94;
+  transform: scale(0.98); /* Slight scale effect when pressed */
+}
+
+/* Focus outline for accessibility */
+.btn-group .btn-purple:focus {
+  outline: none;
+  // box-shadow: 0 0 0 3px rgba(110, 76, 148, 0.6); /* Purple shadow on focus */
+}
