@@ -17,14 +17,16 @@
         <h3 class="show-h3">Description</h3>
         <p><%= @spot.description %></p>
       </div>
-      
-      <div class="opening-hours-section">
-        <h3 class="show-h3">Opening Hours</h3>
-        <div class="opening-hours">
-          <h5>Mo – So</h5>
-          <p><%= @spot.opening_hours %></p>
+
+      <% if @spot.opening_hours.present? %>
+        <div class="opening-hours-section">
+          <h3 class="show-h3">Opening Hours</h3>
+          <div class="opening-hours">
+            <h5>Mo – So</h5>
+            <p><%= @spot.opening_hours %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
 
       <div class="reviews-section">
         <h3 class="show-h3">Reviews</h3>
