@@ -1,0 +1,27 @@
+.topbar {
+  position: fixed; /* Keeps it fixed at the top */
+  top: env(safe-area-inset-top); /* Ensures the topbar starts below the notch */
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 75px; /* Adjust the height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #17171A; /* Matches your background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* For shadow effect */
+  padding-top: env(safe-area-inset-top); /* Ensures padding for notch */
+}
+
+.topbar div:first-child {
+  padding-left: 18px; /* Adds extra space between the button and the left edge */
+}
+
+.topbar div:nth-child(2) {
+  text-align: center; /* Centers the logo */
+  flex: 1; /* Ensures the logo stays centered between the left and right divs */
+}
+
+.topbar div:last-child {
+  padding-right: 18px; /* Adds padding to the right side, if needed */
+}
