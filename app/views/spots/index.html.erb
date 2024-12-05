@@ -48,8 +48,8 @@
                 </div>
 
                 <div class="form-group mt-3">
-                  <%= form.label :user_id, "User" %>
-                  <%= form.select :user_id, options_for_select(@followings.map { |user| ["#{user.first_name} #{user.last_name}", user.id] }, selected: params[:user_id]), { include_blank: "All Users" }, { class: "form-control" } %>
+                  <%= form.label :user_id, "Friend" %>
+                  <%= form.select :user_id, options_for_select(@followings.map { |user| ["#{user.first_name} #{user.last_name}", user.id] }, selected: params[:user_id]), { include_blank: "All Friends" }, { class: "form-control" } %>
                 </div>
 
                 <div class="d-flex justify-content-center mt-3">
