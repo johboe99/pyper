@@ -37,11 +37,9 @@ html, body {
 body {
   padding-bottom: 120px;
   padding-top: 60px;
-  padding-top: env(safe-area-inset-top);
   background-color: #17171A;
 }
 
 header {
   background-color: #17171A;
-  padding-top: env(safe-area-inset-top);  /* Padding to avoid the notch area */
 }
