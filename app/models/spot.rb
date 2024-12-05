@@ -3,11 +3,12 @@ class Spot < ApplicationRecord
   has_many :reviews
 
   has_one_attached :photo
-  validates :photo, presence: true
   validates :address, presence: true
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   validates :opening_hours, presence: true
+
+  after_create_commit :set_default_photo, unless: -> { photo.attached? }
 
   def average_rating
     if self.reviews.count > 0
@@ -15,6 +16,14 @@ class Spot < ApplicationRecord
     else
       0
     end
+  end
+
+  private
+
+  def set_default_photo
+    default_image_url = "https://res.cloudinary.com/dmilkgxzg/image/upload/v1733389604/default_spot_c80est.jpg"
+    io = URI.open(default_image_url)
+    self.photo.attach(io: io, filename: 'default_profile_picture.jpg', content_type: 'image/jpg')
   end
 end
 

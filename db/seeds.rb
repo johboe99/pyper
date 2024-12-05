@@ -16,7 +16,6 @@ Category.destroy_all
 Follower.destroy_all
 User.destroy_all
 Tag.destroy_all
-
 # TODO: category_ids
 
 category_1 = Category.create(name: "Bar", icon: "")
