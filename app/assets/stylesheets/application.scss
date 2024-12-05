@@ -41,6 +41,4 @@ body {
 
 header {
   background-color: #17171A;
-  top: env(safe-area-inset-top); /* Ensures the topbar starts below the notch */
-  padding-top: env(safe-area-inset-top);
 }
