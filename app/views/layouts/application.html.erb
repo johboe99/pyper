@@ -25,13 +25,13 @@
   </head>
 
   <body>
+    <% if controller_name == "spots" && action_name == "show" %>
+      <%= render "shared/topbar_show" %>
+    <% else %>
+      <%= render "shared/topbar" %>
+    <% end %>
     <div class="container-home">
       <%= render "shared/flashes" %>
-      <% if controller_name == "spots" && action_name == "show" %>
-        <%= render "shared/topbar_show" %>
-      <% else %>
-        <%= render "shared/topbar" %>
-      <% end %>
 
 
       <%= yield %>
