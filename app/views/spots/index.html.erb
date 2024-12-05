@@ -31,16 +31,12 @@
           </div>
         </div>
         <div class="modal" data-filter-target="modal">
-          <%# modal for filters %>
-          <%# it should be in front of the buttons (and navbar?) %>
-          <%# it should cover around half of the map/screen, maybe more? %>
-          <%# hide buttons when filter modal is open? %>
           <div class="modal-content">
             <div class="modal-header d-flex justify-content-between">
               <h2>Filter Recommendations</h2>
               <span class="close" data-action="click->filter#close">&times;</span>
             </div>
-            <div class="modal-body mt-3">
+            <div class="modal- mt-3">
               <%= form_with(url: spots_path, method: :get, local: true, class: "form") do |form| %>
                 <div class="form-group">
                   <%= form.label :category_id, "Category" %>
@@ -53,8 +49,8 @@
                 </div>
 
                 <div class="d-flex justify-content-center mt-3">
-                  <%= form.submit "Apply", class: "btn btn-purple me-3" %>
-                  <%= form.button "Cancel", class: "btn btn-purple", data: { action: "click->filter#close" } %>
+                  <%= form.submit "Apply", class: "btn-purple me-3" %>
+                  <%= form.button "Cancel", class: "btn-purple", data: { action: "click->filter#close" } %>
                 </div>
               <% end %>
             </div>
