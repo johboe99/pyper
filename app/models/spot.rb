@@ -23,7 +23,7 @@ class Spot < ApplicationRecord
   def set_default_photo
     default_image_url = "https://res.cloudinary.com/dmilkgxzg/image/upload/v1733389604/default_spot_c80est.jpg"
     io = URI.open(default_image_url)
-    self.photo.attach(io: io, filename: 'default_profile_picture.jpg', content_type: 'image/jpg')
+    self.photo.attach(io: io, filename: 'default_spot.jpg', content_type: 'image/jpg')
   end
 end
 
