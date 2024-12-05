@@ -1,23 +1,22 @@
-
-<div class="container-index mt-5 d-flex justify-content-center align-items-center">
+<div class="container-index mt-10 d-flex justify-content-center align-items-center">
   <div class="row mb-4">
-    <div class="col review-form mt-3">
-      <h1 class= "mx-2">Create a New Spot </h1>
+    <div class="col review-form mt-10">
+      <h3 class="text-center new-spot-title">Create a New Recommendation</h3>
 
       <div class="create-review-form">
         <%= simple_form_for @spot, local: true do |f| %>
-        <%= f.input :name %>
-        <%= f.input :description, as: :text %>
-        <%= f.input :address,
-                      input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
-                      wrapper_html: {data: {controller: "address-autocomplete",
-                      address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
-        <%= f.input :opening_hours %>
-        <%= f.association :category %>
-        <%= f.file_field :photo %>
-        <%= f.submit "Create Spot", class: "btn-purple-full-width" %>
-      <% end %>
-    </div>
+          <%= f.input :name %>
+          <%= f.input :description, as: :text %>
+          <%= f.input :address,
+                      input_html: { data: { address_autocomplete_target: "address" }, class: "d-none" },
+                      wrapper_html: { data: { controller: "address-autocomplete",
+                      address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"] } } %>
+          <%= f.input :opening_hours %>
+          <%= f.association :category %>
+          <%= f.file_field :photo %>
+          <%= f.submit "Create", class: "btn-purple-full-width" %>
+        <% end %>
+      </div>
 
     </div>
   </div>
