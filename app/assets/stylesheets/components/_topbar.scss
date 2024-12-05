@@ -1,6 +1,6 @@
 .topbar {
   position: fixed; /* Keeps it fixed at the top */
-  top: env(safe-area-inset-top); /* Ensures the topbar starts below the notch */
+  top: 0; /* Ensures the topbar starts below the notch */
   left: 0;
   right: 0;
   z-index: 1000;
