@@ -2,14 +2,13 @@
 @import "home";
 
 .container-home {
-  padding-top: calc(70px + env(safe-area-inset-top)); /* 70px is the height of the topbar */
+  padding-top: 70px; /* Directly add 70px for topbar height */
+  padding-top: calc(70px + env(safe-area-inset-top)); /* In case of notches on mobile */
   width: 100%;
   position: relative;
-  background-color: #17171a;
-
+  background-color: #17171A;
   text-align: left;
   color: #f6f8fa;
-
 }
 
 .container-index {
