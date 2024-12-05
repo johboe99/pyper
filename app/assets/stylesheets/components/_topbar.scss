@@ -6,11 +6,10 @@
   z-index: 1000;
   height: 70px; /* Adjust the height as needed */
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: space-between;
   background-color: #17171A; /* Matches your background */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* For shadow effect */
-  padding-top: env(safe-area-inset-top); /* Ensures padding for notch */
 }
 
 .topbar div:first-child {
